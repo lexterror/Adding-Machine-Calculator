@@ -1,0 +1,212 @@
+body {
+	margin: 0 auto;
+	width: 900px;	
+    background-color:#666;
+}
+
+#mainbox {
+	
+	width: 900px;
+    height: 300px;
+	margin-top: 0px;
+	background-color:#666;
+	padding-bottom: 5px;
+	color: #fff;
+	font-family: 'archivo';
+}
+
+.labelit {
+	float: right;
+}
+
+.subtotalright {
+	
+	float: right;	
+}
+
+#mycTable {
+	border-collapse: collapse;
+	border: 0;
+}
+
+#tbody tr:nth-child(even) {
+	
+	background: #888;
+	
+}
+
+#title {
+	background: #2e6c2e;
+	width: 880px;
+	padding: 10px;
+	font-family: 'trajan';
+	text-shadow: 0 0 5px #fff;
+	height: 28px;
+	float: right;
+	text-align: right;
+	
+}
+
+
+.totallabel {
+	margin: 0 auto;
+	width: 440px;
+    margin-left: 10px;
+	border: 0px;
+	background: #666;
+	color: #ddd;
+}
+
+.total {
+	margin: 0 auto;
+	width: 440px;
+	border: 0px;
+	text-align: right;
+	background: #666;
+	color: #ddd;
+}
+
+select {
+    width: 440px;
+
+}
+
+.operation {
+	margin-left: 8px;
+}
+
+.entry {
+	
+	width: 440px;
+	text-align: right;
+}
+
+#subr {
+	text-align: right;
+	float: right;
+}
+
+.enter {
+	width: 884px;
+	margin-left: 8px;
+	margin-bottom: 10px;
+	background-image:url('calcbutton.png'); 
+	color: #fff;
+	padding: 8px;
+	margin-top: 8px;
+}
+
+.cvalue {
+	text-align: right;
+	width: 440px;
+	padding-right: 10px;
+	color: #ddd;
+}
+
+.tvalue {
+	width: 440px;
+	text-align: left;
+	padding-left: 10px;
+	color: #ddd;
+}
+
+.aright {
+	text-align: right;
+	padding-right: 15px;
+	border-bottom: 1px solid #aaa;
+	color:#fff;
+
+}
+
+.aleft {
+	padding-left: 15px;
+	border-bottom: 1px solid #aaa;
+	color:#fff;
+
+}
+
+.delete {
+	float: right;
+	margin-right: 8px;
+	background-color: #111; color: #fff;
+}
+
+.del {
+	float: right;
+	margin-left: 8px;
+	width: 50px;
+}
+
+.clear {
+	width: 440px;
+	background-image:url('calcbutton.png'); 
+	color: #fff;
+	padding: 8px;
+}
+
+.print {
+	width: 440px;
+	background-image:url('calcbutton.png'); 
+	color: #fff;
+	padding: 8px;
+}
+
+#footer {
+	margin-top: 5;
+	padding: 8px;
+}
+
+#mycTable2 {
+	margin: 0 auto;
+	text-align: center;
+	color: #000;
+	border-bottom: 1px solid #aaa;
+	background: #DAF7A6;
+}
+    @font-face {
+
+      font-family: 'archivo';
+
+      src: url('ArchivoNarrow-Regular.eot');
+
+      /* IE9 Compat Modes */
+
+      src: url('ArchivoNarrow-Regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+
+        url('ArchivoNarrow-Regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+
+        url('ArchivoNarrow-Regular.woff') format('woff'),
+        /* Pretty Modern Browsers */
+
+        url('ArchivoNarrow-Regular.ttf') format('truetype');
+
+      /* Safari, Android, iOS */
+
+    }
+	
+    @font-face {
+
+      font-family: 'trajan';
+
+      src: url('TrajanPro-Regular.eot');
+
+      /* IE9 Compat Modes */
+
+      src: url('TrajanPro-Regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+
+        url('TrajanPro-Regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+
+        url('TrajanPro-Regular.woff') format('woff'),
+        /* Pretty Modern Browsers */
+
+        url('TrajanPro-Regular.ttf') format('truetype');
+
+      /* Safari, Android, iOS */
+
+    }
+		
+	
