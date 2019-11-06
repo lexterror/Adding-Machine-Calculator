@@ -105,7 +105,8 @@ function submit() {
 		if (array[b] != 0) {
 		listnumber++;
 		let elem = document.querySelector('#mycTable tbody');
-	    elem.innerHTML = elem.innerHTML + '<tr class="child"><td class="aleft">ID.' + newnumber + '. ' + '(1/' + listnumber + ')' + '<div class="subtotalright">' + subtotal.toFixed(2) + '</div> ' + '</td><td class="aright">' + ' ' + arraytype[b] +' ' + array[b].toFixed(2) + '</td></tr>';
+	    elem.innerHTML = '<tr class="child"><td class="aleft">ID.' + newnumber + '. ' + '(1/' + listnumber + ')' + '<div class="subtotalright">' + subtotal.toFixed(2) + '</div> ' + '</td><td class="aright">' + ' ' + arraytype[b] +' ' + array[b].toFixed(2) + '</td></tr>' + elem.innerHTML;
+	    
 		}
 	 }
 	 subtotal = 0;	
@@ -274,7 +275,7 @@ function delete_entry() {
 		if (array[b] != 0) {
 		listnumber++;
 		let elem = document.querySelector('#mycTable tbody');
-	    elem.innerHTML = elem.innerHTML + '<tr class="child"><td class="aleft">ID.' + newnumber + '. ' + '(1/' + listnumber + ')' + '<div class="subtotalright">' + subtotal.toFixed(2) + '</div>' + '</td><td class="aright">' + ' ' + arraytype[b] +' ' + array[b].toFixed(2) + '</td></tr>';
+	    elem.innerHTML = '<tr class="child"><td class="aleft">ID.' + newnumber + '. ' + '(1/' + listnumber + ')' + '<div class="subtotalright">' + subtotal.toFixed(2) + '</div>' + '</td><td class="aright">' + ' ' + arraytype[b] +' ' + array[b].toFixed(2) + '</td></tr>' + elem.innerHTML;
 		}
 	 }
 	 subtotal = 0;
@@ -331,23 +332,6 @@ function clearit() {
 <body>
 <div id="mainbox">
 <div id="title">Adding Machine<br>Calculator</div>
-<br>
-<table style="width:900px;" id="mycTable">
-<thead>
-  <tr>
-    <th class="tvalue" style="border-bottom: 1px solid #aaa;">ID&nbsp;&nbsp;<div id="subr">Sub-Total</div></th>
-    <th class="cvalue" style="border-bottom: 1px solid #aaa;">Entry</th> 
-  </tr></thead>
-        <tbody id="tbody">
-  
-        </tbody>
-</table>
-<table style="width:900px;" id="mycTable2">
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
 <div id="footer">
 <input type="button" value="Clear" class="clear" onclick="clearit()">
 <input type="button" value="Print" class="clear" onclick="print()">
@@ -364,6 +348,23 @@ function clearit() {
 <input type="button" value="Delete" class="delete" onclick="delete_entry()">
 <input type="number"   name="del" class= "del" id = "del" value="1"><br>
 <label for="del" class="labelit">ID#</label>
+<br>
+<table style="width:900px;" id="mycTable2">
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+<table style="width:900px;" id="mycTable">
+<thead>
+  <tr>
+    <th class="tvalue" style="border-bottom: 1px solid #aaa;">ID&nbsp;&nbsp;<div id="subr">Sub-Total</div></th>
+    <th class="cvalue" style="border-bottom: 1px solid #aaa;">Entry</th> 
+  </tr></thead>
+        <tbody id="tbody">
+  
+        </tbody>
+</table>
 </div>
 </body>
 </html>
