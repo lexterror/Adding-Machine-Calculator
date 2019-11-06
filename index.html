@@ -327,6 +327,45 @@ function clearit() {
 
 
 </script>
+<script>
+    function saveFile() {
+    	
+    var data = [0];	
+    data[0] = "TOTAL = " + total.toFixed(2) + "\r\n\r\n";
+    	
+	 for (var b = 0; b < mylength; b++)
+	 {
+	 	subtotal = getrightsub[b];
+	    var newnumber = arraynumber[b] + 1;
+
+		if (array[b] != 0) {
+		listnumber++;
+		data[b+1] = "Subtotal: " + subtotal.toFixed(2) + "    " + "Entry: " + arraytype[b] + array[b].toFixed(2) + "\r\n";
+	    
+		}
+	 }        
+        // This variable stores all the data.
+        
+        // Convert the text to BLOB.
+        var data2string = data.toString();
+        const textToBLOB = new Blob([data2string], { type: 'text/plain' });
+        const sFileName = 'adding-machine-calculator.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    };
+</script>
 <link rel="stylesheet" href="calcstyle.css" type="text/css" media="all" />
 </head>
 <body>
@@ -345,6 +384,7 @@ function clearit() {
 </select>
 <input type="number" name="entry" class="entry" id="entry" value="0"><br>
 <input type="button" value="Enter" class="enter" onclick="submit()">
+<input type="button" value="Save" class="delete" onclick="saveFile()">
 <input type="button" value="Delete" class="delete" onclick="delete_entry()">
 <input type="number"   name="del" class= "del" id = "del" value="1"><br>
 <label for="del" class="labelit">ID#</label>
