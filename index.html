@@ -1,6 +1,140 @@
 <html>
 <head>
+<style>
 
+.numpad
+{
+        width: 216px !important;
+        height: 36px !important;
+        font-size: 18px;
+        border-radius: 5px;
+}
+</style>
+<script>
+
+var numpadvalue = 0;
+
+function bone() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "1";
+
+}
+function btwo() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "2";
+
+}
+function bthree() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "3";
+
+}
+function bfour() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "4";
+
+}
+function bfive() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "5";
+
+}
+function bsix() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "6";
+
+}
+function bseven() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "7";
+
+}
+function beight() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "8";
+
+}
+function bnine() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "9";
+
+}
+function bzero() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "0";
+
+}
+function bplus() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "+";
+
+}
+function bminus() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "-";
+
+}
+function bmultiply() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "*";
+
+}
+function bdivide() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "/";
+
+}
+function bdot() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += ".";
+
+}
+function bac() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value = "";
+
+}
+function bequal() {
+
+   submit();
+
+}
+function bpercentminus() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "m";
+
+}
+function bpercentplus() {
+
+   numpadvalue =  document.getElementById("entry");
+   numpadvalue.value += "p";
+
+}
+function bback() {
+
+   var a =  document.getElementById("entry");
+   b = a.value;
+   a.value = b.substring(0, b.length - 1);
+
+}
+</script>
 <script>
 
 var total = 0;
@@ -702,7 +836,39 @@ function clearit() {
 <input type="text" name="entry" class="entry" id="entry" value="">
 <input type="button" value="Enter" class="clear" onclick="submit()" id="enter" style="background: green !important;">
 <input type="button" value="Delete" class="clear" onclick="delete_entry()" style="background: red !important;">
+<table>
+<tr>
+<td><input type="button" name="bplus" value="+" class="numpad" onclick="bplus()"></td>
+<td><input type="button" name="bminus" value="-" class="numpad" onclick="bminus()"></td> 
+<td><input type="button" name="bmultiply" value="x" class="numpad" onclick="bmultiply()"></td> 
+<td><input type="button" name="bdivide" value="/" class="numpad" onclick="bdivide()"></td> 
+</tr>
+<tr>
+<td><input type="button" name="seven" value="7" class="numpad" onclick="bseven()"></td>
+<td><input type="button" name="eight" value="8" class="numpad" onclick="beight()"></td> 
+<td><input type="button" name="nine" value="9" class="numpad" onclick="bnine()"></td> 
+<td><input type="button" name="percentplus" value="+%" class="numpad" onclick="bpercentplus()"></td> 
+</tr>
+<tr>
+<td><input type="button" name="four" value="4" class="numpad" onclick="bfour()"></td> 
+<td><input type="button" name="five" value="5" class="numpad" onclick="bfive()"></td> 
+<td><input type="button" name="six" value="6" class="numpad" onclick="bsix()"></td>
+<td><input type="button" name="percentminus" value="-%" class="numpad" onclick="bpercentminus()"></td>
+</tr>
+<tr>
+<td><input type="button" name="one" value="1" class="numpad" onclick="bone()"></td> 
+<td><input type="button" name="two" value="2" class="numpad" onclick="btwo()"></td> 
+<td><input type="button" name="three" value="3" class="numpad" onclick="bthree()"></td>
+<td><input type="button" name="bback" value="<" class="numpad" onclick="bback()"></td>
+</tr>
+<tr>
+<td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
+<td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
+<td><input type="button" name="ac" value="AC" class="numpad" onclick="bac()"></td>
+<td><input type="button" name="bequal" value="=" class="numpad" onclick="bequal()"></td>
+</tr>
 
+</table>
 </div>
 <!-- <input type="number"   name="del" class= "del" id = "del" value=""> -->
 <!-- <label for="del" class="labelit">ID#</label> -->
