@@ -5,7 +5,7 @@
 body {
 	margin: 0 auto;
 	width: 900px;	
-    background-color:#666;
+    background-color:#fff;
     font-family: 'arial';
 }
 
@@ -15,6 +15,7 @@ html {
 }
 .child {
     padding: 10px;
+    color: #000;
 }
 
 #mainbox {
@@ -22,9 +23,9 @@ html {
 	width: 900px;
     height: 100%;
 	margin-top: 0px;
-	background-color:#333;
+	background-color:#fff;
 
-	color: #fff;
+	color: #000;
 	font-family: 'arial';
 }
 
@@ -53,17 +54,17 @@ html {
 
 #tbody tr:nth-child(even) {
 	
-	background: #888;
+	background: #ddd;
 	
 }
 
 #title {
-	background: #556B2F;
+	background: #000000;
 	width: 880px;
 	padding: 10px;
 	font-family: 'arial' !important;
 	color: #fff;
-	text-shadow: 0 0 5px #fff;
+	text-shadow: 0 0 5px #333;
 	height: 24px;
 	float: left;
 	text-align: left;
@@ -79,7 +80,7 @@ html {
     margin-left: 10px;
 	border: 0px;
 	background: #fff;
-	color: #222;
+	color: #000;
     padding: 10px;
     
 }
@@ -88,8 +89,8 @@ html {
 	margin: 0 auto;
 	width: 300px;
 	border: 0px;
-	background: #333;
-	color: #eee;
+	background: #fff;
+	color: #000;
     padding: 10px;
     text-align: left;
     
@@ -101,7 +102,7 @@ html {
 	border: 0px;
 	text-align: right;
 	background: #fff;
-	color: #222;
+	color: #000;
     padding: 10px;
 }
 
@@ -141,7 +142,7 @@ select {
 	text-align: right;
 	width: 440px;
 	padding-right: 10px;
-	color: #ddd;
+	color: #000;
     padding: 10px;
 }
 
@@ -149,7 +150,7 @@ select {
 	width: 440px;
 	text-align: left;
 	padding-left: 10px;
-	color: #ddd;
+	color: #000;
     padding: 10px;
 }
 
@@ -157,7 +158,7 @@ select {
 	text-align: right;
 	padding-right: 15px;
 	border-bottom: 1px solid #aaa;
-	color:#fff;
+	color:#000;
     padding: 10px;
  
 
@@ -166,15 +167,16 @@ select {
 .aleft {
 
 	border-bottom: 1px solid #aaa;
-	color:#fff;
+	color:#000;
     padding: 10px;
 
 
 }
 
 #ghost {
-    background: #333;
+    background: #fff;
     height: 100%;
+    color: #000;
 }
 
 .delete {
@@ -183,7 +185,7 @@ select {
     padding: 8px;
     background: red; 
     width: 120px;
-    color: #fff;
+    color: #000;
 }
 
 .del {
@@ -225,7 +227,7 @@ select {
 #footer {
 	margin-top: 0;
 	padding: 8px;
-    background: #000;
+    background: #fff;
     margin: 0 auto;
     text-align: center;
 }
@@ -233,9 +235,9 @@ select {
 #mycTable2 {
 	margin: 0 auto;
 	text-align: center;
-	color: #eee;
+	color: #000;
 	border-bottom: 1px solid #aaa;
-	background: #7c7f75;
+	background: #fff;
     padding: 10px;
 }
     @font-face {
@@ -1126,7 +1128,7 @@ function clearit() {
 <body>
 <div id="mainbox">
 <div id="ghost">
-<div id="title">Adding Machine Calculator<span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
+<div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
 <div id="footer">
 <input type="button" value="Reset" class="clear" onclick="clearit()" style="background: #666 !important;">
 <input type="button" value="Print" class="clear" onclick="print()" style="background: dodgerblue !important;">
@@ -1153,7 +1155,7 @@ function clearit() {
 <td><input type="button" name="bplus" value="+" class="numpad" onclick="bplus()" style="background: lawngreen;"></td>
 <td><input type="button" name="bminus" value="-" class="numpad" onclick="bminus()" style="background: #ff6666;"></td> 
 <td><input type="button" name="bmultiply" value="x" class="numpad" onclick="bmultiply()" style="background: dodgerblue;"></td> 
-<td><input type="button" name="bdivide" value="/" class="numpad" onclick="bdivide()" style="background: dodgerblue;"></td> 
+<td><input type="button" name="bdivide" value="&divide;" class="numpad" onclick="bdivide()" style="background: dodgerblue;"></td> 
 </tr>
 <tr>
 <td><input type="button" name="seven" value="7" class="numpad" onclick="bseven()"></td>
