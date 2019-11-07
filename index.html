@@ -45,7 +45,7 @@ function submit() {
 	
     var data_entered =  document.getElementById("entry").value;
 
-	if (document.querySelector("#operation").value == "add" && data_entered > 0)
+	if (document.querySelector("#operation").value == "add" && isNaN(data_entered) == false && data_entered > 0)
 	{
 
 		total = (total + parseFloat(data_entered));
@@ -61,6 +61,8 @@ function submit() {
 	if (data_entered.charCodeAt(0) == "43") 
     {
         removeadd = data_entered.substring(1);
+        if (isNaN(removeadd) == false)
+        {
         total = (total + parseFloat(removeadd));
 		current = parseFloat(removeadd);
 		type = "+";
@@ -70,10 +72,11 @@ function submit() {
 		getrightsub[position] = total;
 		position++;
 		positionfake++;
+		}
     
     }
 	
-	if (document.querySelector("#operation").value == "subtract" && data_entered > 0)
+	if (document.querySelector("#operation").value == "subtract" && isNaN(data_entered) == false && data_entered > 0)
 	{
 
 		total = (total - parseFloat(data_entered));
@@ -90,6 +93,8 @@ function submit() {
 	if (data_entered.charCodeAt(0) == "45")
 	{
         removesubtract = data_entered.substring(1);
+        if (isNaN(removesubtract) == false)
+        {
 		total = (total - parseFloat(removesubtract));
 		current = parseFloat(removesubtract);
 		type = "-";
@@ -99,11 +104,12 @@ function submit() {
 		getrightsub[position] = total;
 		position++;
 		positionfake++;
+		}
 	}	
 	
 	
 	
-	if (document.querySelector("#operation").value == "multiply" && data_entered > 0)
+	if (document.querySelector("#operation").value == "multiply" && isNaN(data_entered) == false && data_entered > 0)
 	{
 
 		total = (total * parseFloat(data_entered));
@@ -119,6 +125,8 @@ function submit() {
 	if (data_entered.charCodeAt(0) == "42")
 	{
         removemultiply = data_entered.substring(1);
+        if (isNaN(removemultiply) == false)
+        {
 		total = (total * parseFloat(removemultiply));
 		current = parseFloat(removemultiply);
 		type = "*";
@@ -128,10 +136,11 @@ function submit() {
 		getrightsub[position] = total;
 		position++;
 		positionfake++;
+		}
 	}	
 	
 	
-	if (document.querySelector("#operation").value == "divide" && data_entered > 0)
+	if (document.querySelector("#operation").value == "divide" && isNaN(data_entered) == false && data_entered > 0)
 	{
 
 		total = (total / parseFloat(data_entered));
@@ -147,6 +156,8 @@ function submit() {
 	if (data_entered.charCodeAt(0) == "47")
 	{
         removedivide = data_entered.substring(1);
+        if (isNaN(removedivide) == false)
+        {
 		total = (total / parseFloat(removedivide));
 		current = parseFloat(removedivide);
 		type = "/";
@@ -156,11 +167,12 @@ function submit() {
 		getrightsub[position] = total;
 		position++;
 		positionfake++;
+		}
 	}
 	
    /////PERCENTAGE 
    
-   	if (document.querySelector("#operation").value == "pp" && data_entered > 0)
+   	if (document.querySelector("#operation").value == "pp" && isNaN(data_entered) == false && data_entered > 0)
 	{
         //(total + ((per /100) * total));
 		//total = (total / parseFloat(data_entered));
@@ -179,6 +191,8 @@ function submit() {
         //(total + ((per /100) * total));
 		//total = (total / parseFloat(data_entered));
 		removep = data_entered.substring(1);
+        if (isNaN(removep) == false)
+        {
 		total = (total + (parseFloat(removep) / 100) * total);
 		current = parseFloat(removep);
 		type = "%";
@@ -188,8 +202,9 @@ function submit() {
 		getrightsub[position] = total;
 		position++;
 		positionfake++;
+		}
 	}
-   	if (document.querySelector("#operation").value == "mp" && data_entered > 0)
+   	if (document.querySelector("#operation").value == "mp" && isNaN(data_entered) == false && data_entered > 0)
 	{
         //(total + ((per /100) * total));
 		//total = (total / parseFloat(data_entered));
@@ -209,6 +224,8 @@ function submit() {
         //(total + ((per /100) * total));
 		//total = (total / parseFloat(data_entered));
 		removem = data_entered.substring(1);
+        if (isNaN(removem) == false)
+        {
 		total = (total - (parseFloat(removem) / 100) * total);
 		current = parseFloat(removem);
 		type = "-%";
@@ -218,6 +235,7 @@ function submit() {
 		getrightsub[position] = total;
 		position++;
 		positionfake++;
+		}
 	}	
 	
 	
@@ -249,7 +267,7 @@ function submit() {
 	var s = document.getElementById("entry");
     s.value = "";	
 	
-    document.getElementById("total").value=total.toFixed(2);
+   // document.getElementById("total").value=total.toFixed(2);
 	document.getElementById("tvalues").innerHTML=total.toFixed(2);
 	
 
@@ -269,7 +287,7 @@ function delete_entry() {
 	var table = document.getElementById("mycTable");
 	var x=document.getElementById('mycTable2');
 	
-	del_entry = document.getElementById("del").value;
+	del_entry = document.getElementById("entry").value;
 	var tempentry = del_entry - 1;
 	
 	if (arraytype[tempentry] == "+" && del_entry >= 0)
@@ -572,7 +590,7 @@ function delete_entry() {
 	var x=document.getElementById('mycTable2');
 	x.innerHTML="Total = " + total.toFixed(2);
 	 
-	document.getElementById("total").value=total.toFixed(2);
+	//document.getElementById("total").value=total.toFixed(2);
 	var s = document.getElementById("entry");
     s.value = "";
 
@@ -593,7 +611,7 @@ function clearit() {
 	var zero = 0;
 	var z=document.getElementById('mycTable2');
 	z.innerHTML="Total = " + zero.toFixed(2);
-	document.getElementById("total").value=zero.toFixed(2);
+	//document.getElementById("total").value=zero.toFixed(2);
 	total = 0;
 	position = 0;
 	current = 0;
@@ -664,12 +682,14 @@ function clearit() {
 <div id="ghost">
 <div id="title">Adding Machine Calculator<span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
 <div id="footer">
-<input type="button" value="Clear" class="clear" onclick="clearit()">
-<input type="button" value="Print" class="clear" onclick="print()">
-</div>
+<input type="button" value="Reset" class="clear" onclick="clearit()" style="background: #666 !important;">
+<input type="button" value="Print" class="clear" onclick="print()" style="background: dodgerblue !important;">
+<input type="button" value="Save" class="clear" onclick="saveFile()" style="background: dodgerblue !important;">
 
-<input type="text" value="Total:" class="totallabel" readonly><input type="text" value="0.00" class="total" id="total" readonly>
-<input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly>
+<!-- <input type="text" value="Total:" class="totallabel" readonly><input type="text" value="0.00" class="total" id="total" readonly> -->
+
+<!-- <input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly> -->
+
 <select id="operation" class="operation">
   <option value="auto">auto</option>
   <option value="add">+ (auto = +num)</option>
@@ -679,12 +699,13 @@ function clearit() {
   <option value="pp" >+% (auto = pnum)</option>
   <option value="mp" >&minus;% (auto = mnum)</option>
 </select>
-<input type="string" name="entry" class="entry" id="entry" value="">
-<input type="button" value="Enter" class="enter" onclick="submit()" id="enter">
-<input type="button" value="Save" class="delete" onclick="saveFile()">
-<input type="button" value="Delete" class="delete" onclick="delete_entry()">
-<input type="number"   name="del" class= "del" id = "del" value="1">
-<label for="del" class="labelit">ID#</label>
+<input type="text" name="entry" class="entry" id="entry" value="">
+<input type="button" value="Enter" class="clear" onclick="submit()" id="enter" style="background: green !important;">
+<input type="button" value="Delete" class="clear" onclick="delete_entry()" style="background: red !important;">
+
+</div>
+<!-- <input type="number"   name="del" class= "del" id = "del" value=""> -->
+<!-- <label for="del" class="labelit">ID#</label> -->
 <table style="width:900px;" id="mycTable2">
 <tbody>
 <tr>

@@ -2,8 +2,13 @@ body {
 	margin: 0 auto;
 	width: 900px;	
     background-color:#666;
+    font-family: 'flama';
 }
 
+html {
+    
+    font-family: 'flama';
+}
 .child {
     padding: 10px;
 }
@@ -14,9 +19,9 @@ body {
     height: 100%;
 	margin-top: 0px;
 	background-color:#333;
-	padding-bottom: 5px;
+
 	color: #fff;
-	font-family: 'archivo';
+	font-family: 'flama';
 }
 
 .labelit {
@@ -52,14 +57,14 @@ body {
 	background-image: url("logo.png");
 	width: 880px;
 	padding: 10px;
-	font-family: 'archivo';
+	font-family: 'trajan' !important;
 	color: #000;
-	text-shadow: 0 0 5px #000;
-	height: 28px;
+	text-shadow: 0 0 5px #fff;
+	height: 24px;
 	float: left;
 	text-align: left;
-    line-height: 28px;
-    font-size: 28px;
+    line-height: 24px;
+    font-size: 24px;
 	
 }
 
@@ -77,11 +82,12 @@ body {
 
 .totallabel2 {
 	margin: 0 auto;
-	width: 450px;
+	width: 300px;
 	border: 0px;
 	background: #333;
 	color: #eee;
     padding: 10px;
+    text-align: left;
     
 }
 
@@ -96,22 +102,23 @@ body {
 }
 
 select {
-    width: 440px;
+    width: 120px;
+    padding: 8px;
 
 }
 
 .operation {
-	margin-left: 8px;
-    padding: 10px;
-    font-size: 24px;
+
+    padding: 8px;
+    width: 120px;
+   
 }
 
 .entry {
 	
-	width: 440px;
+	width: 120px;
 	text-align: right;
-    padding: 10px;
-    font-size: 24px;
+    padding: 8px;
 }
 
 #subr {
@@ -120,13 +127,10 @@ select {
 }
 
 .enter {
-	width: 884px;
-	margin-left: 8px;
-	margin-bottom: 10px;
-	background-image:url('calcbutton.png'); 
+	width: 120px;
+	background: green;
 	color: #fff;
 	padding: 8px;
-	margin-top: 8px;
 }
 
 .cvalue {
@@ -170,11 +174,12 @@ select {
 }
 
 .delete {
-	float: right;
-	margin-right: 8px;
-	background-color: #111; color: #fff;
-    padding: 10px;
-    background-image:url('calcbutton.png'); 
+	float: left;
+
+    padding: 8px;
+    background: red; 
+    width: 120px;
+    color: #fff;
 }
 
 .del {
@@ -186,23 +191,39 @@ select {
 }
 
 .clear {
-	width: 440px;
-	background-image:url('calcbutton.png'); 
+	width: 120px;
 	color: #fff;
 	padding: 8px;
+    margin-top: 10px;
+  
+ 
+}
+
+
+
+.clear2 {
+	width: 120px;
+	background: black; 
+	color: #fff;
+	padding: 8px;
+    float: left;
+    margin-left: 10px;
  
 }
 
 .print {
-	width: 440px;
-	background-image:url('calcbutton.png'); 
+	width: 120px;
+	background: dodgerblue;
 	color: #fff;
 	padding: 8px;
 }
 
 #footer {
-	margin-top: 5;
+	margin-top: 0;
 	padding: 8px;
+    background: #000;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #mycTable2 {
@@ -235,5 +256,50 @@ select {
       /* Safari, Android, iOS */
 
     }
-	
+    @font-face {
+      font-family: 'trajan';
 
+      src: url('ArchivoNarrow-Regular.eot');
+
+      /* IE9 Compat Modes */
+
+      src: url('TrajanPro-Regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+
+        url('TrajanPro-Regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+
+        url('TrajanPro-Regular.woff') format('woff'),
+        /* Pretty Modern Browsers */
+
+        url('TrajanPro-Regular.ttf') format('truetype');
+
+      /* Safari, Android, iOS */
+
+    }	
+    @font-face {
+      font-family: 'flama';
+
+      src: url('Flama.eot');
+
+      /* IE9 Compat Modes */
+
+      src: url('Flama.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+
+        url('Flama.woff2') format('woff2'),
+        /* Super Modern Browsers */
+
+        url('Flama.woff') format('woff'),
+        /* Pretty Modern Browsers */
+
+        url('Flama.ttf') format('truetype');
+
+      /* Safari, Android, iOS */
+
+    }	
+    
+input[type="button"]
+{
+        border: none !important;
+}
