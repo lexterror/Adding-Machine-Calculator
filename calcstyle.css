@@ -11,9 +11,9 @@ body {
 #mainbox {
 	
 	width: 900px;
-    height: 300px;
+    height: 100%;
 	margin-top: 0px;
-	background-color:#666;
+	background-color:#333;
 	padding-bottom: 5px;
 	color: #fff;
 	font-family: 'archivo';
@@ -30,6 +30,12 @@ body {
 
 }
 
+.about {
+
+    font-size: 16px;
+    
+}
+
 #mycTable {
 	border-collapse: collapse;
 	border: 0;
@@ -43,14 +49,17 @@ body {
 }
 
 #title {
-	background: #2e6c2e;
+	background-image: url("logo.png");
 	width: 880px;
 	padding: 10px;
-	font-family: 'trajan';
-	text-shadow: 0 0 5px #fff;
+	font-family: 'archivo';
+	color: #000;
+	text-shadow: 0 0 5px #000;
 	height: 28px;
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
+    line-height: 28px;
+    font-size: 28px;
 	
 }
 
@@ -60,9 +69,20 @@ body {
 	width: 440px;
     margin-left: 10px;
 	border: 0px;
-	background: #666;
-	color: #ddd;
+	background: #fff;
+	color: #222;
     padding: 10px;
+    
+}
+
+.totallabel2 {
+	margin: 0 auto;
+	width: 450px;
+	border: 0px;
+	background: #333;
+	color: #eee;
+    padding: 10px;
+    
 }
 
 .total {
@@ -70,8 +90,8 @@ body {
 	width: 440px;
 	border: 0px;
 	text-align: right;
-	background: #666;
-	color: #ddd;
+	background: #fff;
+	color: #222;
     padding: 10px;
 }
 
@@ -83,6 +103,7 @@ select {
 .operation {
 	margin-left: 8px;
     padding: 10px;
+    font-size: 24px;
 }
 
 .entry {
@@ -90,6 +111,7 @@ select {
 	width: 440px;
 	text-align: right;
     padding: 10px;
+    font-size: 24px;
 }
 
 #subr {
@@ -142,11 +164,17 @@ select {
 
 }
 
+#ghost {
+    background: #333;
+    height: 100%;
+}
+
 .delete {
 	float: right;
 	margin-right: 8px;
 	background-color: #111; color: #fff;
     padding: 10px;
+    background-image:url('calcbutton.png'); 
 }
 
 .del {
@@ -154,6 +182,7 @@ select {
 	margin-left: 8px;
 	width: 100px;
     padding: 10px;
+  
 }
 
 .clear {
@@ -161,6 +190,7 @@ select {
 	background-image:url('calcbutton.png'); 
 	color: #fff;
 	padding: 8px;
+ 
 }
 
 .print {
@@ -178,9 +208,9 @@ select {
 #mycTable2 {
 	margin: 0 auto;
 	text-align: center;
-	color: #000;
+	color: #eee;
 	border-bottom: 1px solid #aaa;
-	background: #DAF7A6;
+	background: #7c7f75;
     padding: 10px;
 }
     @font-face {
@@ -206,27 +236,4 @@ select {
 
     }
 	
-    @font-face {
 
-      font-family: 'trajan';
-
-      src: url('TrajanPro-Regular.eot');
-
-      /* IE9 Compat Modes */
-
-      src: url('TrajanPro-Regular.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-
-        url('TrajanPro-Regular.woff2') format('woff2'),
-        /* Super Modern Browsers */
-
-        url('TrajanPro-Regular.woff') format('woff'),
-        /* Pretty Modern Browsers */
-
-        url('TrajanPro-Regular.ttf') format('truetype');
-
-      /* Safari, Android, iOS */
-
-    }
-		
-	

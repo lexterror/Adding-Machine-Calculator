@@ -24,7 +24,19 @@ var previous = 0;
 var next = 0;
 var result = 0;
 
-	
+var removeadd = 0;
+var removesubtract = 0;
+var removedivide = 0;
+var removemultiply = 0;
+
+var removenpercentage = 0;
+var removep = 0;
+var removepercentage = 0;
+var removem = 0;
+
+var getrightsum = 0;
+
+
 	
 
 function submit() {
@@ -46,6 +58,21 @@ function submit() {
 		position++;
 		positionfake++;
 	}
+	if (data_entered.charCodeAt(0) == "43") 
+    {
+        removeadd = data_entered.substring(1);
+        total = (total + parseFloat(removeadd));
+		current = parseFloat(removeadd);
+		type = "+";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+    
+    }
+	
 	if (document.querySelector("#operation").value == "subtract" && data_entered > 0)
 	{
 
@@ -59,12 +86,29 @@ function submit() {
 		position++;
 		positionfake++;
 	}
+	
+	if (data_entered.charCodeAt(0) == "45")
+	{
+        removesubtract = data_entered.substring(1);
+		total = (total - parseFloat(removesubtract));
+		current = parseFloat(removesubtract);
+		type = "-";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}	
+	
+	
+	
 	if (document.querySelector("#operation").value == "multiply" && data_entered > 0)
 	{
 
 		total = (total * parseFloat(data_entered));
 		current = parseFloat(data_entered);
-		type = "x";
+		type = "*";
 		array[position] = current;
 		arraytype[position] = type;
 		arraynumber[position] = position;
@@ -72,6 +116,21 @@ function submit() {
 		position++;
 		positionfake++;
 	}
+	if (data_entered.charCodeAt(0) == "42")
+	{
+        removemultiply = data_entered.substring(1);
+		total = (total * parseFloat(removemultiply));
+		current = parseFloat(removemultiply);
+		type = "*";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}	
+	
+	
 	if (document.querySelector("#operation").value == "divide" && data_entered > 0)
 	{
 
@@ -85,12 +144,84 @@ function submit() {
 		position++;
 		positionfake++;
 	}
+	if (data_entered.charCodeAt(0) == "47")
+	{
+        removedivide = data_entered.substring(1);
+		total = (total / parseFloat(removedivide));
+		current = parseFloat(removedivide);
+		type = "/";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}
+	
+   /////PERCENTAGE 
+   
+   	if (document.querySelector("#operation").value == "pp" && data_entered > 0)
+	{
+        //(total + ((per /100) * total));
+		//total = (total / parseFloat(data_entered));
+		total = (total + (parseFloat(data_entered) / 100) * total);
+		current = parseFloat(data_entered);
+		type = "%";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}
+   	if (data_entered.charCodeAt(0) == "112")
+	{
+        //(total + ((per /100) * total));
+		//total = (total / parseFloat(data_entered));
+		removep = data_entered.substring(1);
+		total = (total + (parseFloat(removep) / 100) * total);
+		current = parseFloat(removep);
+		type = "%";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}
+   	if (document.querySelector("#operation").value == "mp" && data_entered > 0)
+	{
+        //(total + ((per /100) * total));
+		//total = (total / parseFloat(data_entered));
+		total = (total - (parseFloat(data_entered) / 100) * total);
+		current = parseFloat(data_entered);
+		type = "-%";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}	
+	
+   	if (data_entered.charCodeAt(0) == "109")
+	{
+        //(total + ((per /100) * total));
+		//total = (total / parseFloat(data_entered));
+		removem = data_entered.substring(1);
+		total = (total - (parseFloat(removem) / 100) * total);
+		current = parseFloat(removem);
+		type = "-%";
+		array[position] = current;
+		arraytype[position] = type;
+		arraynumber[position] = position;
+		getrightsub[position] = total;
+		position++;
+		positionfake++;
+	}	
 	
 	
 
-	
-	if (data_entered > 0)
-	{
 	document.querySelector("#mycTable tbody").innerHTML = "";
 	 //$("#mycTable tbody").empty();
 	 mylength = array.length;
@@ -112,13 +243,11 @@ function submit() {
 	 subtotal = 0;	
 	 listnumber = 0;
 	
-	
-	}
 	var x=document.getElementById('mycTable2');
 	x.innerHTML="Total = " + total.toFixed(2);
 	
 	var s = document.getElementById("entry");
-    s.value = 0;	
+    s.value = "";	
 	
     document.getElementById("total").value=total.toFixed(2);
 	document.getElementById("tvalues").innerHTML=total.toFixed(2);
@@ -154,13 +283,29 @@ function delete_entry() {
 	onlyone = (array[previous] - parseFloat(array[tempentry]));
    // arrayRemove(array, previous);
 	//arrayRemove(array, tempentry);
+	
+	arraytype[tempentry] = 0;
+	
 	total = (total + onlyone);
 	array[tempentry] = 0;
 	total = 0;
 	getrightsub = [];
 	for (let i = 0; i < array.length; i++)
 	{
+		//total = (total + array[i]);
+		if (arraytype[i] == "*")
+		total = (total * array[i]);
+		if (arraytype[i] == "/")
+		total = (total / array[i]);
+		if (arraytype[i] == "+")
 		total = (total + array[i]);
+		if (arraytype[i] == "-")
+		total = (total - array[i]);
+		if (arraytype[i] == "-%")		
+		total = (total - (parseFloat(array[i]) / 100) * total);
+		if (arraytype[i] == "%")	
+		total = (total + (parseFloat(array[i]) / 100) * total);		
+
 		getrightsub[i] = total;
 		
 	}
@@ -180,13 +325,28 @@ function delete_entry() {
 	onlyone = (array[previous] * parseFloat(array[tempentry]));
    // arrayRemove(array, previous);
 	//arrayRemove(array, tempentry);
+	
+    arraytype[tempentry] = 0;
+	
 	total = (total + onlyone);
 	array[tempentry] = 0;
 	total = 0;
 	getrightsub = [];
 	for (let i = 0; i < array.length; i++)
 	{
+		if (arraytype[i] == "*")
+		total = (total * array[i]);
+		if (arraytype[i] == "/")
+		total = (total / array[i]);
+		if (arraytype[i] == "+")
 		total = (total + array[i]);
+		if (arraytype[i] == "-")
+		total = (total - array[i]);
+		if (arraytype[i] == "-%")		
+		total = (total - (parseFloat(array[i]) / 100) * total);
+		if (arraytype[i] == "%")	
+		total = (total + (parseFloat(array[i]) / 100) * total);	
+		
 		getrightsub[i] = total;
 		
 	}
@@ -205,19 +365,35 @@ function delete_entry() {
 	//array[del_entry] = 0;
 	
 	}
-	if (arraytype[tempentry] == "x" && del_entry >= 0)
+	if (arraytype[tempentry] == "*" && del_entry >= 0)
 	{
     previous = (tempentry - 1);
 	onlyone = (array[previous] / parseFloat(array[tempentry]));
    // arrayRemove(array, previous);
 	//arrayRemove(array, tempentry);
+	
+	arraytype[tempentry] = 0;
+	
 	total = (total + onlyone);
 	array[tempentry] = 0;
 	total = 0;
 	getrightsub = [];
 	for (let i = 0; i < array.length; i++)
 	{
+
+		if (arraytype[i] == "*")
+		total = (total * array[i]);
+		if (arraytype[i] == "/")
+		total = (total / array[i]);
+		if (arraytype[i] == "+")
 		total = (total + array[i]);
+		if (arraytype[i] == "-")
+		total = (total - array[i]);	
+		if (arraytype[i] == "-%")		
+		total = (total - (parseFloat(array[i]) / 100) * total);
+		if (arraytype[i] == "%")	
+		total = (total + (parseFloat(array[i]) / 100) * total);	
+		
 		getrightsub[i] = total;
 		
 	}
@@ -242,13 +418,29 @@ function delete_entry() {
 	onlyone = (array[previous] + parseFloat(array[tempentry]));
    // arrayRemove(array, previous);
 	//arrayRemove(array, tempentry);
+	
+    arraytype[tempentry] = 0;
+	
 	total = (total + onlyone);
 	array[tempentry] = 0;
 	total = 0;
 	getrightsub = [];
 	for (let i = 0; i < array.length; i++)
 	{
+		//total = (total + array[i]);
+		if (arraytype[i] == "*")
+		total = (total * array[i]);
+		if (arraytype[i] == "/")
+		total = (total / array[i]);
+		if (arraytype[i] == "+")
 		total = (total + array[i]);
+		if (arraytype[i] == "-")
+		total = (total - array[i]);
+		if (arraytype[i] == "-%")		
+		total = (total - (parseFloat(array[i]) / 100) * total);
+		if (arraytype[i] == "%")	
+		total = (total + (parseFloat(array[i]) / 100) * total);	
+		
 		getrightsub[i] = total;
 		
 	}
@@ -265,6 +457,102 @@ function delete_entry() {
 //	$('#mycTable tbody').append('<tr class="child"><td class="aleft">' + total +'</td><td class="aright">' + mylength + '. ' + '+' + ' ' + current + '</td></tr>');
 	//array[del_entry] = 0;
 	}
+	
+	
+	///// PERCENTAGE ////////////////////////////////////////////////
+	
+	if (arraytype[tempentry] == "-%" && del_entry >= 0)
+	{
+	//		total = (total + (parseFloat(data_entered) / 100) * total);
+    previous = (tempentry - 1);
+	onlyone = (array[previous] + (parseFloat(array[tempentry]) / 100) * total);
+   // arrayRemove(array, previous);
+	//arrayRemove(array, tempentry);
+    arraytype[tempentry] = 0;
+	
+	
+	total = (total + onlyone);
+	array[tempentry] = 0;
+	total = 0;
+	getrightsub = [];
+	for (let i = 0; i < array.length; i++)
+	{
+		if (arraytype[i] == "*")
+		total = (total * array[i]);
+		if (arraytype[i] == "/")
+		total = (total / array[i]);
+		if (arraytype[i] == "+")
+		total = (total + array[i]);
+		if (arraytype[i] == "-")
+		total = (total - array[i]);
+		if (arraytype[i] == "-%")		
+		total = (total - (parseFloat(array[i]) / 100) * total);
+		if (arraytype[i] == "%")	
+		total = (total + (parseFloat(array[i]) / 100) * total);	
+		
+		getrightsub[i] = total;
+		
+	}
+	
+		
+	x.innerHTML="Total = " + total;
+	//current = array[del_entry];	
+	//var mynewentry = del_entry;
+	//current = array[del_entry];	
+	//array.splice(mynewentry);
+	//total = total + array[del_entry];
+	//var mylength = array.length - 1;
+//	$('#mycTable tbody').append('<tr class="child"><td class="aleft">' + total +'</td><td class="aright">' + mylength + '. ' + '+' + ' ' + current + '</td></tr>');
+	//array[del_entry] = 0;
+	}
+	
+	if (arraytype[tempentry] == "%" && del_entry >= 0)
+	{
+	//		total = (total + (parseFloat(data_entered) / 100) * total);
+    previous = (tempentry - 1);
+	onlyone = (array[previous] - (parseFloat(array[tempentry]) / 100) * total);
+   // arrayRemove(array, previous);
+	//arrayRemove(array, tempentry);
+	arraytype[tempentry] = 0;
+	
+	total = (total + onlyone);
+	array[tempentry] = 0;
+	total = 0;
+	getrightsub = [];
+	for (let i = 0; i < array.length; i++)
+	{
+		if (arraytype[i] == "*")
+		total = (total * array[i]);
+		if (arraytype[i] == "/")
+		total = (total / array[i]);
+		if (arraytype[i] == "+")
+		total = (total + array[i]);
+		if (arraytype[i] == "-")
+		total = (total - array[i]);
+		if (arraytype[i] == "-%")		
+		total = (total - (parseFloat(array[i]) / 100) * total);
+		if (arraytype[i] == "%")	
+		total = (total + (parseFloat(array[i]) / 100) * total);			
+		getrightsub[i] = total;
+		
+	}
+
+	//array[tempentry] = 0;
+	
+	x.innerHTML="Total = " + total;
+	//current = array[del_entry];	
+	//var mynewentry = del_entry;
+	//current = array[del_entry];	
+	//array.splice(mynewentry);
+	//total = total + array[del_entry];
+	//var mylength = array.length - 1;
+//	$('#mycTable tbody').append('<tr class="child"><td class="aleft">' + total +'</td><td class="aright">' + mylength + '. ' + '+' + ' ' + current + '</td></tr>');
+	//array[del_entry] = 0;
+	}
+	
+	
+	
+	
 	
 
 	 for (var b = 0; b < mylength; b++)
@@ -286,7 +574,7 @@ function delete_entry() {
 	 
 	document.getElementById("total").value=total.toFixed(2);
 	var s = document.getElementById("entry");
-    s.value = 0;
+    s.value = "";
 
 	
 	
@@ -347,7 +635,8 @@ function clearit() {
         // This variable stores all the data.
         
         // Convert the text to BLOB.
-        var data2string = data.toString();
+        var data2stringnocoma = data.join("");
+        var data2string = data2stringnocoma.toString();
         const textToBLOB = new Blob([data2string], { type: 'text/plain' });
         const sFileName = 'adding-machine-calculator.txt';	   // The file to save the data.
 
@@ -365,30 +654,37 @@ function clearit() {
 
         newLink.click(); 
     };
+    
+
 </script>
 <link rel="stylesheet" href="calcstyle.css" type="text/css" media="all" />
 </head>
 <body>
 <div id="mainbox">
-<div id="title">Adding Machine<br>Calculator</div>
+<div id="ghost">
+<div id="title">Adding Machine Calculator<span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
 <div id="footer">
 <input type="button" value="Clear" class="clear" onclick="clearit()">
 <input type="button" value="Print" class="clear" onclick="print()">
 </div>
+
 <input type="text" value="Total:" class="totallabel" readonly><input type="text" value="0.00" class="total" id="total" readonly>
+<input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly>
 <select id="operation" class="operation">
-  <option value="add">+</option>
-  <option value="subtract">&minus;</option>
-  <option value="multiply" >&times;</option>
-  <option value="divide" >&divide;</option>
+  <option value="auto">auto</option>
+  <option value="add">+ (auto = +num)</option>
+  <option value="subtract">&minus; (auto = -num)</option>
+  <option value="multiply" >&times; (auto = *num)</option>
+  <option value="divide" >&divide; (auto = /num)</option>
+  <option value="pp" >+% (auto = pnum)</option>
+  <option value="mp" >&minus;% (auto = mnum)</option>
 </select>
-<input type="number" name="entry" class="entry" id="entry" value="0"><br>
-<input type="button" value="Enter" class="enter" onclick="submit()">
+<input type="string" name="entry" class="entry" id="entry" value="">
+<input type="button" value="Enter" class="enter" onclick="submit()" id="enter">
 <input type="button" value="Save" class="delete" onclick="saveFile()">
 <input type="button" value="Delete" class="delete" onclick="delete_entry()">
-<input type="number"   name="del" class= "del" id = "del" value="1"><br>
+<input type="number"   name="del" class= "del" id = "del" value="1">
 <label for="del" class="labelit">ID#</label>
-<br>
 <table style="width:900px;" id="mycTable2">
 <tbody>
 <tr>
@@ -405,6 +701,15 @@ function clearit() {
   
         </tbody>
 </table>
-</div>
+</div></div>
 </body>
 </html>
+<script>
+document.onkeypress = function(e) {
+    e = e || window.event;
+    //if (e.keyCode == "13")
+    if (e.key === "Enter")
+    submit();
+
+}
+</script>
