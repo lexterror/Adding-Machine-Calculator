@@ -61,6 +61,7 @@ html {
 	border-collapse: collapse;
 	border: 0;
     padding: 10px;
+   
 }
 
 #tbody tr:nth-child(even) {
@@ -134,12 +135,16 @@ select {
 
 .entry {
 	
-	width: 100%;
+	width: 430px;
 	text-align: right;
   padding: 8px;
   height:32px;
   font-size:32px;
   line-height:32px;
+  right:0;
+  background:#333;
+  float:right;
+  color:#fff;
   
 }
 
@@ -248,12 +253,18 @@ select {
 }
 
 #mycTable2 {
-	margin: 0 auto;
-	text-align: center;
-	color: #000;
-	border-bottom: 1px solid #aaa;
-	background: #fff;
-    padding: 10px;
+	
+	width: 360px;
+	text-align: left;
+  padding: 8px;
+  height:32px;
+  font-size:32px;
+  line-height:32px;
+  left:0;
+  background:yellowgreen;
+  float:left;
+  color:#fff;
+  
 }
     @font-face {
 
@@ -761,7 +772,7 @@ function submit() {
 	 listnumber = 0;
 	
 	var x=document.getElementById('mycTable2');
-	x.innerHTML="Total = " + total.toFixed(2);
+	x.value="Total = " + total.toFixed(2);
 	
 	var s = document.getElementById("entry");
     s.value = "";	
@@ -829,7 +840,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.innerHTML="Total = " + total;
+	x.value="Total = " + total;
 	//var mylength = array.length - 1;
 	//$('#mycTable tbody').append('<tr class="child"><td class="aleft">' + total +'</td><td class="aright">' + mylength + '. ' + '-' + ' ' + current + '</td></tr>');
 
@@ -870,7 +881,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.innerHTML="Total = " + total;
+	x.value="Total = " + total;
 	// WORKING FULLY ///////////////////////////////////////////////////////////////
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
@@ -917,7 +928,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.innerHTML="Total = " + total;
+	x.value="Total = " + total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -964,7 +975,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.innerHTML="Total = " + total;
+	x.value="Total = " + total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -1012,7 +1023,7 @@ function delete_entry() {
 	}
 	
 		
-	x.innerHTML="Total = " + total;
+	x.value="Total = " + total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -1056,7 +1067,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.innerHTML="Total = " + total;
+	x.value ="Total = " + total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -1087,7 +1098,7 @@ function delete_entry() {
 	 listnumber = 0;
 	 
 	var x=document.getElementById('mycTable2');
-	x.innerHTML="Total = " + total.toFixed(2);
+	x.value="Total = " + total.toFixed(2);
 	 
 	//document.getElementById("total").value=total.toFixed(2);
 	var s = document.getElementById("entry");
@@ -1110,7 +1121,7 @@ function clearit() {
 	//$("#mycTable tbody").empty();
 	var zero = 0;
 	var z=document.getElementById('mycTable2');
-	z.innerHTML="Total = " + zero.toFixed(2);
+	z.value ="Total = " + zero.toFixed(2);
 	//document.getElementById("total").value=zero.toFixed(2);
 	total = 0;
 	position = 0;
@@ -1181,7 +1192,9 @@ function clearit() {
 <div id="ghost">
 <div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
 <div id="footer">
-  <input type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value="">
+  <div style="width:100%">
+    <input readonly type="text" style="width:430px;color:#fff;" id="mycTable2">
+  <input type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value=""></div>
 <input  class="bz" type="button" value="Reset" class="clear" onclick="clearit()" style="background: #666 !important;">
 <input  class="bz" type="button" value="Print" class="clear" onclick="print()" style="background: dodgerblue !important;">
 <input  class="bz" type="button" value="Save" class="clear" onclick="saveFile()" style="background: dodgerblue !important;">
@@ -1240,12 +1253,7 @@ function clearit() {
 </div>
 <!-- <input type="number"   name="del" class= "del" id = "del" value=""> -->
 <!-- <label for="del" class="labelit">ID#</label> -->
-<table style="width:900px;" id="mycTable2">
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
+
 <table style="width:900px;" id="mycTable">
 <thead>
   <tr>
