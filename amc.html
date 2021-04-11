@@ -8,12 +8,12 @@
 body {
 	margin: 0 auto;
 	width: 900px;	
-  font-family: 'arial';
+  font-family: 'Helvetica';
 }
 
 html {
     
-    font-family: 'arial';
+    font-family: 'Helvetica';
 }
 .child {
     padding: 10px;
@@ -37,7 +37,7 @@ html {
 	background-color:#fff;
 
 	color: #000;
-	font-family: 'arial';
+	font-family: 'Helvetica';
 }
 
 .labelit {
@@ -73,7 +73,7 @@ html {
 	background: #fff;
 	width: 880px;
 	padding: 10px;
-	font-family: 'arial' !important;
+	font-family: 'Helvetica' !important;
 	color: #000;
 	text-shadow: 0 0 5px orange;
 	height: 24px;
@@ -339,6 +339,7 @@ input[type="button"]
         height: 128px !important;
         font-size: 32px;
         border-radius: 5px;
+        background: linear-gradient(#ccc,#aaa);
 }
 </style>
 <script>
@@ -1198,40 +1199,40 @@ function clearit() {
   <option value="pp" >&plus;% (auto = pnum)</option>
   <option value="mp" >&minus;% (auto = mnum)</option>
 </select>
-<input class="bz" type="button" value="Enter" class="clear" onclick="submitq()" id="enter" style="background: green !important;">
+<input class="bz" type="button" value="Enter" class="clear" onclick="submitq()" id="enter" style="background: yellowgreen !important;">
 <input  class="bz" type="button" value="Delete" class="clear" onclick="delete_entry()" style="background: red !important;">
-<input  class="bz" onclick="mynumpad();" type="button" value="Numpad" class="clear" style="background: purple !important;">
+<input  class="bz" onclick="mynumpad();" type="button" value="Numpad" class="clear" style="background: black !important;">
 <div id="numpad">
 <table>
 <tr>
-<td><input type="button" name="bplus" value="&plus;" class="numpad" onclick="bplus()" style="background:yellowgreen;color:#fff;"></td>
-<td><input type="button" name="bminus" value="&minus;" class="numpad" onclick="bminus()" style="background: deeppink;color:white;"></td> 
-<td><input type="button" name="bmultiply" value="&times;" class="numpad" onclick="bmultiply()" style="background: dodgerblue;color:white;"></td> 
-<td><input type="button" name="bdivide" value="&divide;" class="numpad" onclick="bdivide()" style="background: orange;color:#fff;"></td> 
+<td><input type="button" name="bplus" value="&plus;" class="numpad" onclick="bplus()" style="color:#fff; background:linear-gradient(gold,orange);color:white"></td>
+<td><input type="button" name="bminus" value="&minus;" class="numpad" onclick="bminus()" style="background: linear-gradient(gold,orange);color:white;"></td> 
+<td><input type="button" name="bmultiply" value="&times;" class="numpad" onclick="bmultiply()" style="color:white; background:linear-gradient(gold,orange);color:white"></td> 
+<td><input type="button" name="bdivide" value="&divide;" class="numpad" onclick="bdivide()" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td> 
 </tr>
 <tr>
 <td><input type="button" name="seven" value="7" class="numpad" onclick="bseven()"></td>
 <td><input type="button" name="eight" value="8" class="numpad" onclick="beight()"></td> 
 <td><input type="button" name="nine" value="9" class="numpad" onclick="bnine()"></td> 
-<td><input type="button" name="percentplus" value="+%" class="numpad" onclick="bpercentplus()" style="background: gold;"></td> 
+<td><input type="button" name="percentplus" value="+%" class="numpad" onclick="bpercentplus()" style=""></td> 
 </tr>
 <tr>
 <td><input type="button" name="four" value="4" class="numpad" onclick="bfour()"></td> 
 <td><input type="button" name="five" value="5" class="numpad" onclick="bfive()"></td> 
 <td><input type="button" name="six" value="6" class="numpad" onclick="bsix()"></td>
-<td><input type="button" name="percentminus" value="-%" class="numpad" onclick="bpercentminus()" style="background:gold"></td>
+<td><input type="button" name="percentminus" value="-%" class="numpad" onclick="bpercentminus()" style=""></td>
 </tr>
 <tr>
 <td><input type="button" name="one" value="1" class="numpad" onclick="bone()"></td> 
 <td><input type="button" name="two" value="2" class="numpad" onclick="btwo()"></td> 
 <td><input type="button" name="three" value="3" class="numpad" onclick="bthree()"></td>
-<td><input type="button" name="bback" value="&#8656;" class="numpad" onclick="bback()" style="background: red;color:#fff;"></td>
+<td><input type="button" name="bback" value="&#8656;" class="numpad" onclick="bback()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
 </tr>
 <tr>
 <td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
 <td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
 <td><input type="button" name="bequal" value="=" class="numpad" onclick="submitq();"></td>
-<td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background: red;color:#fff;"></td>
+<td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
 
 </tr>
 
