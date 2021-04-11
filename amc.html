@@ -459,43 +459,38 @@ function bzero() {
 function bplus() {
 
 
-  numpadvalue =  document.getElementById("entry");
   
-
-  document.getElementById("");
    var ppp =  document.getElementById("entry").value;
-   var pppp = "+" + ppp;
-   document.getElementById("entry").value = pppp;
-   if (pppp.length > 1)
-   submit();
+   fake = ppp;
+  // document.getElementById("entry").value = "";
+   faketype = "+";
+   submitq();
+
 
 }
 function bminus() {
 
    var mpp = document.getElementById("entry").value;
-   var mppp = "-" + mpp;
-   document.getElementById("entry").value = mppp;
-     if (mppp.length > 1)
-   submit();
-
+   fake =  mpp;
+ //  document.getElementById("entry").value = "";
+   faketype = "-";
 }
 function bmultiply() {
 
    var mxpp =  document.getElementById("entry").value;
-   var mxppp = "*" + mxpp;
-  document.getElementById("entry").value = mxppp;
-    if (mxppp.length > 1)
-   submit();
-   
-
+   fake = mxpp;
+//  document.getElementById("entry").value = "";
+  faketype = "*";
+  
+  
 }
 function bdivide() {
 
     var dpp =  document.getElementById("entry").value;
-  var dppp = "/" + dpp;
-  document.getElementById("entry").value = dppp;
-    if (dppp.length > 1)
-   submit();
+  fake = dpp;
+//  document.getElementById("entry").value = "";
+
+  faketype = "/";
 }
 function bdot() {
 
@@ -517,22 +512,34 @@ function bequal() {
 
 }
 function bpercentminus() {
-
+/*
    var perpp =  document.getElementById("entry").value;
    var perppp = "m" + perpp;
      document.getElementById("entry").value = perppp;
        if (perppp.length > 1)
    submit();
+*/
 
+   var mxpp =  document.getElementById("entry").value;
+   fake = mxpp;
+//  document.getElementById("entry").value = "";
+  faketype = "m";
+  
 }
 function bpercentplus() {
-
+/*
    var permpp =  document.getElementById("entry").value;
   var  permppp = "p" + permpp;
   document.getElementById("entry").value = permppp;
     if (permppp.length > 1)
    submit();
+*/
 
+   var mxpp =  document.getElementById("entry").value;
+   fake = mxpp;
+//  document.getElementById("entry").value = "";
+  faketype = "p";
+  
 }
 function bback() {
 
@@ -543,6 +550,13 @@ function bback() {
 }
 </script>
 <script>
+var fake = "";
+var faketype = "";
+
+ var soap = "";
+	var sumo = "";
+	 var mman = "";
+	 var stripped = "";
 
 var total = 0;
 var position = 0;
@@ -599,8 +613,49 @@ function submit() {
 
 // 'MyStringWithALotWhitespace'
 	
-    var stripped =  document.getElementById("entry").value;
-    const data_entered = stripped.replace(/\s+/g, '')
+    stripped =  document.getElementById("entry").value;
+    
+    if (faketype == "+")
+    {
+    soap = parseFloat(stripped);
+    mman = soap; 
+    sumo = "+" + mman;
+    }
+    if (faketype == "-")
+    {
+    soap = parseFloat(stripped);
+    mman = soap;
+    sumo = "-" + soap;
+    }
+    if (faketype == "*")
+    {
+    soap = parseFloat(stripped);
+    mman = soap
+    sumo = "*" + soap;
+    }
+    if (faketype == "/")
+    {
+    soap = parseFloat(stripped);
+    mman = soap;
+    sumo = "/" + soap;
+    }
+if (faketype == "m")
+    {
+    soap = parseFloat(stripped);
+    mman = soap;
+    sumo = "m" + soap;
+    }
+if (faketype == "p")
+    {
+    soap = parseFloat(stripped);
+    mman = soap;
+    sumo = "p" + soap;
+    }
+
+
+    
+   const data_entered = sumo;
+   // const data_entered = sumo.replace(/\s+/g, '');
     
 
 	if (document.querySelector("#operation").value == "add" && isNaN(data_entered) == false && data_entered > 0)
@@ -1303,7 +1358,7 @@ function clearit() {
 <tr>
 <td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
 <td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
-<td><input type="button" name="bequal" value="=" class="numpad" onclick="submitq();"></td>
+<td><input type="button" name="bequal" value="=" class="numpad" onclick="submit();"></td>
 <td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
 
 </tr>
