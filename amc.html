@@ -419,6 +419,7 @@ function bzero() {
 }
 function bplus() {
 
+  document.getElementById("");
    var ppp =  document.getElementById("entry").value;
    var pppp = "+" + ppp;
    document.getElementById("entry").value = pppp;
@@ -1203,7 +1204,7 @@ function clearit() {
 
 <!-- <input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly> -->
 
-<select id="operation" class="operation">
+<select id="operation" class="operation" onchange="checknumpad()">
   <option value="auto">auto (off)</option>
   <option value="add">&plus; (auto = +num)</option>
   <option value="subtract">&minus; (auto = -num)</option>
@@ -1304,7 +1305,21 @@ function mynumpad()
 {
 
 	var content = document.getElementById("numpad");
+	var op = document.getElementById("operation");
+	if (op.value == "auto")
   toggle(content);
   
+}
+
+function checknumpad()
+{	
+  var op = document.getElementById("operation");
+  var nump = document.getElementById("numpad");
+  if (op.value == "auto")
+  {
+    show(nump);
+  }
+  else 
+  hide(nump);
 }
 </script>
