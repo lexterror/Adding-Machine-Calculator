@@ -1,12 +1,14 @@
 <html>
 <head>
+<meta name="viewport" content="min-width=1160 user-scalable=no"/>
+
+ <meta charset="UTF-8">
 <style>
 
 body {
 	margin: 0 auto;
 	width: 900px;	
-  
-    font-family: 'arial';
+  font-family: 'arial';
 }
 
 html {
@@ -1228,7 +1230,7 @@ function clearit() {
 <tr>
 <td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
 <td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
-<td><input type="button" name="bequal" value="=" class="numpad"></td>
+<td><input type="button" name="bequal" value="=" class="numpad" onclick="submitq();"></td>
 <td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background: red;color:#fff;"></td>
 
 </tr>
