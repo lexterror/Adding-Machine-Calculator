@@ -473,7 +473,9 @@ function bminus() {
    var mpp = document.getElementById("entry").value;
    fake =  mpp;
  //  document.getElementById("entry").value = "";
+ 
    faketype = "-";
+    submitq();
 }
 function bmultiply() {
 
@@ -481,7 +483,7 @@ function bmultiply() {
    fake = mxpp;
 //  document.getElementById("entry").value = "";
   faketype = "*";
-  
+   submitq();
   
 }
 function bdivide() {
@@ -491,6 +493,7 @@ function bdivide() {
 //  document.getElementById("entry").value = "";
 
   faketype = "/";
+   submitq();
 }
 function bdot() {
 
@@ -524,6 +527,7 @@ function bpercentminus() {
    fake = mxpp;
 //  document.getElementById("entry").value = "";
   faketype = "m";
+   submitq();
   
 }
 function bpercentplus() {
@@ -539,7 +543,7 @@ function bpercentplus() {
    fake = mxpp;
 //  document.getElementById("entry").value = "";
   faketype = "p";
-  
+   submitq();
 }
 function bback() {
 
@@ -606,13 +610,15 @@ function submitq()
    submit();
 
 }
-
+var data_entered = "";
+var sexe = "";
 function submit() {
 	
 
-
+   sexe = document.getElementById("operation").value;
 // 'MyStringWithALotWhitespace'
-	
+	if (sexe == "mobile")
+	{
     stripped =  document.getElementById("entry").value;
     
     if (faketype == "+")
@@ -654,9 +660,19 @@ if (faketype == "p")
 
 
     
-   const data_entered = sumo;
+   data_entered = sumo.replace(/\s+/g, '');
    // const data_entered = sumo.replace(/\s+/g, '');
+	}
+	
+	
+	if (sexe != "mobile")
+	{
+	  
+	
+    data_entered =  document.getElementById("entry").value.replace(/\s+/g, '');
     
+	  
+	}
 
 	if (document.querySelector("#operation").value == "add" && isNaN(data_entered) == false && data_entered > 0)
 	{
@@ -1358,7 +1374,7 @@ function clearit() {
 <tr>
 <td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
 <td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
-<td><input type="button" name="bequal" value="=" class="numpad" onclick="submit();"></td>
+<td><input type="button" name="bequal" value="=" class="numpad" onclick="submitq();"></td>
 <td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
 
 </tr>
