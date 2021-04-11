@@ -21,7 +21,7 @@ html {
 }
 
 .bz {
-  width: 122px;
+  width: 144px;
   height: 32px;
   color:#fff;
   padding:0;
@@ -128,24 +128,42 @@ select {
 .operation {
 
     padding: 8px;
-    width: 120px;
+    width: 144px;
     height:32px;
    
 }
 
+.mytotal {
+	
+	width: 436px;
+	text-align: left;
+  padding: 8px;
+  height:64px;
+  font-size:48px;
+  line-height:64px;
+  left:0;
+  border:none;
+  float:left;
+  background:linear-gradient(90deg,#ddd,white);
+  margin:0 auto;
+  border-radius:10px;
+}
+
+
 .entry {
 	
-	width: 430px;
+	width: 436px;
 	text-align: right;
   padding: 8px;
-  height:32px;
-  font-size:32px;
-  line-height:32px;
+  height:64px;
+  font-size:48px;
+  line-height:64px;
   right:0;
-  background:#333;
+  border:none;
   float:right;
-  color:#fff;
-  
+  background:linear-gradient(90deg,white,#ddd);
+  margin:0 auto;
+  border-radius:10px;
 }
 
 #subr {
@@ -360,64 +378,89 @@ var numpadvalue = 0;
 function bone() {
 
    numpadvalue =  document.getElementById("entry");
+   if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "1";
+   
 
 }
 function btwo() {
 
    numpadvalue =  document.getElementById("entry");
+   if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "2";
 
 }
 function bthree() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "3";
 
 }
 function bfour() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "4";
 
 }
 function bfive() {
 
    numpadvalue =  document.getElementById("entry");
+     if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "5";
 
 }
 function bsix() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "6";
 
 }
 function bseven() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "7";
 
 }
 function beight() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "8";
 
 }
 function bnine() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "9";
 
 }
 function bzero() {
 
    numpadvalue =  document.getElementById("entry");
+      if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += "0";
 
 }
 function bplus() {
+
+
+  numpadvalue =  document.getElementById("entry");
+  
 
   document.getElementById("");
    var ppp =  document.getElementById("entry").value;
@@ -457,6 +500,8 @@ function bdivide() {
 function bdot() {
 
    numpadvalue =  document.getElementById("entry");
+    if (numpadvalue.value == total)
+   numpadvalue.value = "";
    numpadvalue.value += ".";
 
 }
@@ -538,10 +583,10 @@ function submitq()
    var mainentry =  document.getElementById("entry").value;
   
    var check = 0;
-  const res = mainentry.includes("+") || mainentry.includes("-") || mainentry.includes('*') ||mainentry.includes('/') || mainentry.includes('p') ||  mainentry.includes('m');
+   const res = mainentry.includes("+") || mainentry.includes("-") || mainentry.includes('*') ||mainentry.includes('/') || mainentry.includes('p') ||  mainentry.includes('m');
    if (mainentry.length == 1)
-   if (res == false)
-   check == 1;
+   if (res == true)
+   check = 1;
    
    if (check == 0)
    submit();
@@ -551,9 +596,11 @@ function submitq()
 function submit() {
 	
 
+
+// 'MyStringWithALotWhitespace'
 	
-    var data_entered =  document.getElementById("entry").value;
-    
+    var stripped =  document.getElementById("entry").value;
+    const data_entered = stripped.replace(/\s+/g, '')
     
 
 	if (document.querySelector("#operation").value == "add" && isNaN(data_entered) == false && data_entered > 0)
@@ -772,11 +819,17 @@ function submit() {
 	 subtotal = 0;	
 	 listnumber = 0;
 	
-	var x=document.getElementById('mycTable2');
-	x.value="Total = " + total.toFixed(2);
+	var x=document.getElementById('mytotal');
+	x.value=total.toFixed(2);
+	
+	// var op = document.getElementById("operation");
+	
 	
 	var s = document.getElementById("entry");
-    s.value = "";	
+//	if (op.value == "mobile")
+ //     s.value = total.toFixed(2);	
+//  else 
+    s.value = "";
 	
    // document.getElementById("total").value=total.toFixed(2);
 	document.getElementById("tvalues").innerHTML=total.toFixed(2);
@@ -785,7 +838,7 @@ function submit() {
 	
   
   
-}
+}  // endof submit
 
 
 
@@ -796,7 +849,7 @@ function delete_entry() {
 	//$("#mycTable tbody").empty();
 	
 	var table = document.getElementById("mycTable");
-	var x=document.getElementById('mycTable2');
+	var x=document.getElementById('mycTable');
 	
 	del_entry = document.getElementById("entry").value;
 	var tempentry = del_entry - 1;
@@ -841,7 +894,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.value="Total = " + total;
+//	x.value=total;
 	//var mylength = array.length - 1;
 	//$('#mycTable tbody').append('<tr class="child"><td class="aleft">' + total +'</td><td class="aright">' + mylength + '. ' + '-' + ' ' + current + '</td></tr>');
 
@@ -882,7 +935,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.value="Total = " + total;
+//	x.value=total;
 	// WORKING FULLY ///////////////////////////////////////////////////////////////
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
@@ -929,7 +982,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.value="Total = " + total;
+//	x.value=total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -976,7 +1029,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.value="Total = " + total;
+//	x.value=total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -1024,7 +1077,7 @@ function delete_entry() {
 	}
 	
 		
-	x.value="Total = " + total;
+//	x.value=total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -1068,7 +1121,7 @@ function delete_entry() {
 
 	//array[tempentry] = 0;
 	
-	x.value ="Total = " + total;
+//	x.value=total;
 	//current = array[del_entry];	
 	//var mynewentry = del_entry;
 	//current = array[del_entry];	
@@ -1098,8 +1151,8 @@ function delete_entry() {
 	 subtotal = 0;
 	 listnumber = 0;
 	 
-	var x=document.getElementById('mycTable2');
-	x.value="Total = " + total.toFixed(2);
+	var x=document.getElementById('mycTable');
+	//x.value=total.toFixed(2);
 	 
 	//document.getElementById("total").value=total.toFixed(2);
 	var s = document.getElementById("entry");
@@ -1117,12 +1170,15 @@ function arrayRemove(arr, value) {
 
 }
 function clearit() {
+  var x=document.getElementById('mytotal');
+	x.value="";
+	
 	document.querySelector("#mycTable tbody").innerHTML = "";
 	document.getElementById("entry").value = "";
 	//$("#mycTable tbody").empty();
 	var zero = 0;
-	var z=document.getElementById('mycTable2');
-	z.value ="Total = " + zero.toFixed(2);
+	var z=document.getElementById('mycTable');
+	z.value =zero.toFixed(2);
 	//document.getElementById("total").value=zero.toFixed(2);
 	total = 0;
 	position = 0;
@@ -1194,8 +1250,9 @@ function clearit() {
 <div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
 <div id="footer">
   <div style="width:100%">
-    <input readonly type="text" style="width:430px;color:#fff;" id="mycTable2">
-  <input type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value=""></div>
+
+  <input readonly type="text" pattern=""  name="mytotal" class="mytotal" id="mytotal" value="">
+  <input readonly type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value=""></div>
 <input  class="bz" type="button" value="Reset" class="clear" onclick="clearit()" style="background: #666 !important;">
 <input  class="bz" type="button" value="Print" class="clear" onclick="print()" style="background: dodgerblue !important;">
 <input  class="bz" type="button" value="Save" class="clear" onclick="saveFile()" style="background: dodgerblue !important;">
@@ -1205,6 +1262,7 @@ function clearit() {
 <!-- <input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly> -->
 
 <select id="operation" class="operation" onchange="checknumpad()">
+  <option value="mobile">Mobile</option>
   <option value="auto">auto (off)</option>
   <option value="add">&plus; (auto = +num)</option>
   <option value="subtract">&minus; (auto = -num)</option>
@@ -1215,7 +1273,7 @@ function clearit() {
 </select>
 <input class="bz" type="button" value="Enter" class="clear" onclick="submitq()" id="enter" style="background: yellowgreen !important;">
 <input  class="bz" type="button" value="Delete ID" class="clear" onclick="delete_entry()" style="background: red !important;">
-<input  class="bz" onclick="mynumpad();" type="button" value="Numpad" class="clear" style="background: black !important;">
+
 <div id="numpad">
 <table>
 <tr>
@@ -1315,11 +1373,15 @@ function checknumpad()
 {	
   var op = document.getElementById("operation");
   var nump = document.getElementById("numpad");
-  if (op.value == "auto")
+  if (op.value == "mobile")
   {
     show(nump);
+     document.getElementById('entry').setAttribute('readonly');
   }
   else 
+  {
   hide(nump);
+  document.getElementById('entry').removeAttribute('readonly');
+  }
 }
 </script>
