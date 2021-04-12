@@ -366,134 +366,180 @@ input[type="button"]
 {
         width: 216px !important;
         height: 128px !important;
-        font-size: 32px;
+        font-size: 64px;
+        line-height: 64px;
         border-radius: 5px;
         background: linear-gradient(#ccc,#aaa);
 }
 </style>
 <script>
-
+var faketype = "+";
+var fake = "";
 var numpadvalue = 0;
+var lockbuttons = 0;
 
 function bone() {
-
+  
+   fake = "";
    numpadvalue =  document.getElementById("entry");
-   if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "1";
+   fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+   
+ //  submitq();
    
 
 }
 function btwo() {
-
+   fake = "";
    numpadvalue =  document.getElementById("entry");
-   if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "2";
+   fake = numpadvalue.value;
+   lockbuttons = 0;
+    enterlock = 0;
+   
+ //submitq();
 
 }
 function bthree() {
-
+ fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "3";
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+  //   submitq();
 
 }
 function bfour() {
-
+fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "4";
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+   //  submitq();
 
 }
 function bfive() {
-
+ fake = "";
    numpadvalue =  document.getElementById("entry");
-     if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "5";
-
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+// submitq();
 }
 function bsix() {
-
+fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "6";
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+//     submitq();
 
 }
 function bseven() {
-
+fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "7";
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+  //   submitq();
 
 }
 function beight() {
-
+fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
+    
    numpadvalue.value += "8";
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+ //    submitq();
 
 }
 function bnine() {
-
+fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "9";
-
+ fake = numpadvalue.value;
+ lockbuttons = 0;
+    enterlock = 0;
+ // submitq();
 }
 function bzero() {
-
+fake = "";
    numpadvalue =  document.getElementById("entry");
-      if (numpadvalue.value == total)
-   numpadvalue.value = "";
    numpadvalue.value += "0";
+    fake = numpadvalue.value;
+    lockbuttons = 0;
+    enterlock = 0;
+   //  submitq();
 
 }
+
 function bplus() {
 
 
   
-   var ppp =  document.getElementById("entry").value;
-   fake = ppp;
+ //  var ppp =  document.getElementById("entry").value;
+ //  fake = ppp;
   // document.getElementById("entry").value = "";
-   faketype = "+";
-   submitq();
 
-
+  if (lockbuttons == 0)
+  {
+   
+  faketype = "+";
+  enterlock = 0;
+   lockbuttons = 0;
+  
+  }
+ 
 }
 function bminus() {
 
-   var mpp = document.getElementById("entry").value;
-   fake =  mpp;
  //  document.getElementById("entry").value = "";
- 
-   faketype = "-";
-    submitq();
+
+  if (lockbuttons == 0)
+  {
+   
+  faketype = "-";
+   enterlock = 0;
+   lockbuttons = 0;
+ }
+  
+   //submitq();
 }
 function bmultiply() {
 
-   var mxpp =  document.getElementById("entry").value;
-   fake = mxpp;
+
 //  document.getElementById("entry").value = "";
+
+ 
+  if (lockbuttons == 0)
+  {
+   
   faketype = "*";
-   submitq();
-  
+   enterlock = 0;
+   lockbuttons = 0;
+ }
 }
 function bdivide() {
 
-    var dpp =  document.getElementById("entry").value;
-  fake = dpp;
+  
 //  document.getElementById("entry").value = "";
 
-  faketype = "/";
-   submitq();
+  if (lockbuttons == 0)
+  {
+   
+faketype = "/";
+ enterlock = 0;
+ lockbuttons = 0;
+ }
 }
 function bdot() {
 
@@ -511,7 +557,12 @@ function bac() {
 }
 function bequal() {
 
-   submit();
+   if (enterlock == 0)
+   {
+     lockbuttons= 0;
+     enterlock = 1;
+   submitq();
+   }
 
 }
 function bpercentminus() {
@@ -523,13 +574,21 @@ function bpercentminus() {
    submit();
 */
 
-   var mxpp =  document.getElementById("entry").value;
-   fake = mxpp;
-//  document.getElementById("entry").value = "";
-  faketype = "m";
-   submitq();
   
+//  document.getElementById("entry").value = "";
+
+  // submitq();
+  
+  if (lockbuttons == 0)
+  {
+   
+  faketype = "m";
+   enterlock = 0;
+   lockbuttons = 0;
+ 
+  }
 }
+
 function bpercentplus() {
 /*
    var permpp =  document.getElementById("entry").value;
@@ -538,12 +597,18 @@ function bpercentplus() {
     if (permppp.length > 1)
    submit();
 */
-
-   var mxpp =  document.getElementById("entry").value;
-   fake = mxpp;
 //  document.getElementById("entry").value = "";
+ //  submitq();
+
+  if (lockbuttons == 0)
+  {
+   
   faketype = "p";
-   submitq();
+   enterlock = 0;
+   lockbuttons = 0;
+
+  }
+  
 }
 function bback() {
 
@@ -554,13 +619,24 @@ function bback() {
 }
 </script>
 <script>
-var fake = "";
-var faketype = "";
 
+function reply(clicked_id)
+  {
+    
+    elements = document.getElementsByClassName('sib');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.background = "linear-gradient(gold, orange)";
+    }
+  
+       document.getElementById(clicked_id).style.background = "linear-gradient(lightblue, dodgerblue)";
+    
+  }
+  
  var soap = "";
 	var sumo = "";
 	 var mman = "";
 	 var stripped = "";
+	 var enterlock = 0;
 
 var total = 0;
 var position = 0;
@@ -594,7 +670,7 @@ var removepercentage = 0;
 var removem = 0;
 
 var getrightsum = 0;
-
+var firsttime = 0;
 
 function submitq()
 {
@@ -619,43 +695,43 @@ function submit() {
 // 'MyStringWithALotWhitespace'
 	if (sexe == "mobile")
 	{
-    stripped =  document.getElementById("entry").value;
+   // stripped =  document.getElementById("entry").value;
     
     if (faketype == "+")
     {
-    soap = parseFloat(stripped);
+    soap = parseFloat(fake);
     mman = soap; 
     sumo = "+" + mman;
     }
     if (faketype == "-")
     {
-    soap = parseFloat(stripped);
+    soap = parseFloat(fake);
     mman = soap;
-    sumo = "-" + soap;
+    sumo = "-" + mman;
     }
     if (faketype == "*")
     {
-    soap = parseFloat(stripped);
-    mman = soap
-    sumo = "*" + soap;
+    soap = parseFloat(fake);
+    mman = soap;
+    sumo = "*" + mman;
     }
     if (faketype == "/")
     {
-    soap = parseFloat(stripped);
+    soap = parseFloat(fake);
     mman = soap;
-    sumo = "/" + soap;
+    sumo = "/" + mman;
     }
 if (faketype == "m")
     {
-    soap = parseFloat(stripped);
+    soap = parseFloat(fake);
     mman = soap;
-    sumo = "m" + soap;
+    sumo = "m" + mman;
     }
 if (faketype == "p")
     {
-    soap = parseFloat(stripped);
+    soap = parseFloat(fake);
     mman = soap;
-    sumo = "p" + soap;
+    sumo = "p" + mman;
     }
 
 
@@ -904,8 +980,6 @@ if (faketype == "p")
 	
    // document.getElementById("total").value=total.toFixed(2);
 	document.getElementById("tvalues").innerHTML=total.toFixed(2);
-	
-
 	
   
   
@@ -1264,8 +1338,12 @@ function clearit() {
 	subtotal = 0;
 	listnumber = 0;
     getrightsub = [];
-	
-	
+	 faketype = "+";
+	 fake = "";
+	  elements = document.getElementsByClassName('sib');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.background = "linear-gradient(gold, orange)";
+    }
 }
 
 
@@ -1348,22 +1426,22 @@ function clearit() {
 <div id="numpad">
 <table>
 <tr>
-<td><input type="button" name="bplus" value="&plus;" class="numpad" onclick="bplus()" style="color:#fff; background:linear-gradient(gold,orange);color:white"></td>
-<td><input type="button" name="bminus" value="&minus;" class="numpad" onclick="bminus()" style="background: linear-gradient(gold,orange);color:white;"></td> 
-<td><input type="button" name="bmultiply" value="&times;" class="numpad" onclick="bmultiply()" style="color:white; background:linear-gradient(gold,orange);color:white"></td> 
-<td><input type="button" name="bdivide" value="&divide;" class="numpad" onclick="bdivide()" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td> 
+<td><input type="button" id="pluss"  name="bplus" value="&plus;" class="numpad sib" onclick="bplus(), reply(this.id);" style="color:#fff; background:linear-gradient(gold,orange);color:white"></td>
+<td><input type="button" id="minuss" name="bminus" value="&minus;" class="numpad sib" onclick="bminus(), reply(this.id);" style="background: linear-gradient(gold,orange);color:white;"></td> 
+<td><input type="button" id="multss" name="bmultiply" value="&times;" class="numpad sib" onclick="bmultiply(), reply(this.id)" style="color:white; background:linear-gradient(gold,orange);color:white"></td> 
+<td><input type="button" id="divss" name="bdivide" value="&divide;" class="numpad sib" onclick="bdivide(), reply(this.id)" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td> 
 </tr>
 <tr>
 <td><input type="button" name="seven" value="7" class="numpad" onclick="bseven()"></td>
 <td><input type="button" name="eight" value="8" class="numpad" onclick="beight()"></td> 
 <td><input type="button" name="nine" value="9" class="numpad" onclick="bnine()"></td> 
-<td><input type="button" name="percentplus" value="&plus;%" class="numpad" onclick="bpercentplus()" style=""></td> 
+<td><input type="button" id="perpp" name="percentplus" value="&plus;%" class="sib numpad" onclick="bpercentplus(), reply(this.id)" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td> 
 </tr>
 <tr>
 <td><input type="button" name="four" value="4" class="numpad" onclick="bfour()"></td> 
 <td><input type="button" name="five" value="5" class="numpad" onclick="bfive()"></td> 
 <td><input type="button" name="six" value="6" class="numpad" onclick="bsix()"></td>
-<td><input type="button" name="percentminus" value="&minus;%" class="numpad" onclick="bpercentminus()" style=""></td>
+<td><input type="button" id="perpss" name="percentminus" value="&minus;%" class="numpad sib" onclick="bpercentminus(), reply(this.id)" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td>
 </tr>
 <tr>
 <td><input type="button" name="one" value="1" class="numpad" onclick="bone()"></td> 
@@ -1374,7 +1452,7 @@ function clearit() {
 <tr>
 <td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
 <td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
-<td><input type="button" name="bequal" value="=" class="numpad" onclick="submitq();"></td>
+<td><input type="button" onclick="bequal();" name="bequal" value="&crarr;" class="numpad" style="background:linear-gradient(lawngreen, yellowgreen);"></td>
 <td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
 
 </tr>
