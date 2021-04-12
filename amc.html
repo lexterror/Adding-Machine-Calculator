@@ -482,6 +482,11 @@ fake = "";
 
 }
 
+function defaulttype()
+{
+    document.getElementById("pluss").style.background = "linear-gradient(lightblue, dodgerblue)";
+}
+
 function bplus() {
 
 
@@ -1339,11 +1344,13 @@ function clearit() {
 	listnumber = 0;
     getrightsub = [];
 	 faketype = "+";
+	
 	 fake = "";
 	  elements = document.getElementsByClassName('sib');
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.background = "linear-gradient(gold, orange)";
     }
+    document.getElementById("pluss").style.background = "linear-gradient(lightblue, dodgerblue)";
 }
 
 
@@ -1393,7 +1400,7 @@ function clearit() {
 
 </script>
 </head>
-<body>
+<body onload="defaulttype()">
 <div id="mainbox">
 <div id="ghost">
 <div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
