@@ -184,17 +184,25 @@
     transform: translateY(-2px);
   }
   
-  
-  
-<style>
 
 tr:nth-child(even) {
   font-family: core !important;
-  background: #CCC !important;}
+  background: #CCC !important;
+ 
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
+}
 tr:nth-child(odd) {
   
-  background: #eee!important;
-font-family: core !important;}
+  background: #eee !important;
+font-family: core !important;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
+}
+
 th {
   background:#ccc;
   color:#eee;
@@ -239,8 +247,12 @@ html {
 }
 
 .subtotalright {
-	
+	text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
 	float: right;	
+	max-width:200px;
+
 
 }
 
@@ -377,6 +389,9 @@ select {
 	padding-right: 10px;
 	color: #000;
     padding: 10px;
+    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
 }
 
 .tvalue {
@@ -385,6 +400,9 @@ select {
 	padding-left: 10px;
 	color: #000;
     padding: 10px;
+    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
 }
 
 .aright {
@@ -392,7 +410,10 @@ select {
 	padding-right: 15px;
 	border-bottom: 1px solid #aaa;
 	color:#000;
-    padding: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
+  max-width:150px;
  
 
 }
@@ -863,6 +884,19 @@ function bback() {
 </script>
 <script>
 
+function changesizesu() {
+ 
+  
+  var vag = document.querySelector('#mycTable');
+  vag.style.fontSize = "xx-large";
+}
+
+function changesize(selectTag) {
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  
+  var vag = document.querySelector('#mycTable');
+  vag.style.fontSize = listValue;
+}
 function reply(clicked_id)
   {
     
@@ -1229,7 +1263,7 @@ if (faketype == "p")
 		if (array[b] != 0) {
 		listnumber++;
 		let elem = document.querySelector('#mycTable tbody');
-	    elem.innerHTML = '<tr class="child"><td class="aleft">ID.' + newnumber + '. ' + '(1/' + listnumber + ')' + '<div class="subtotalright">' + subtotal.toFixed(2) + '</div> ' + '</td><td class="aright">' + ' ' + arraytype[b] +' ' + array[b].toFixed(2) + '</td></tr>' + elem.innerHTML;
+	    elem.innerHTML = '<tr id="mysize" class="child"><td class="aleft">ID.' + newnumber + '. ' + '(1/' + listnumber + ')' + '<div class="subtotalright">' + subtotal.toFixed(2) + '</div> ' + '</td><td class="aright">' + ' ' + arraytype[b] +' ' + array[b].toFixed(2) + '</td></tr>' + elem.innerHTML;
 	    
 		}
 	 }
@@ -1664,10 +1698,26 @@ function clearit() {
 
 </script>
 </head>
-<body onload="defaulttype()">
+<body onload="defaulttype(), changesizesu()">
 <div id="mainbox">
 <div id="ghost">
-<div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about" style="font-family:core;"><i>&nbsp;&nbsp;Personal Finance</i></span></div>
+<div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about" style="font-family:core;"><i>&nbsp;&nbsp;Personal Finance</i></span>
+  <select onchange="changesize(this);" size="11" style="float:right;">
+  <option>xx-small</option>
+  <option>x-small</option>
+  <option>small</option>
+  <option>medium</option>
+  <option>large</option>
+  <option>x-large</option>
+  <option selected>xx-large</option>
+  <option>100%</option>
+  <option>250%</option>
+  <option>2cm</option>
+  <option>100px</option>
+</select>
+</div>
+ 
+
 <div id="footer">
   <div style="width:100%">
 
