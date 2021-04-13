@@ -3,6 +3,189 @@
 <meta name="viewport" content="min-width=1160 user-scalable=no"/>
 
  <meta charset="UTF-8">
+ <style>
+ .pushablebb {
+   background:dodgerblue;
+   
+ }
+ 
+ .frontbb {
+    background: linear-gradient(dodgerblue, #87CEEB);
+ }
+ 
+ .pushableb {
+    
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    
+     width: 216px !important;
+      height: 128px !important;
+      font-size: 64px;
+      line-height: 64px;
+      font-family:micro !important;
+      color: white;
+     
+    
+  }
+  .frontb {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+   
+
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushableb:active .frontb {
+    transform: translateY(-2px);
+  }
+ 
+ .pushableyy {
+   
+   background: orange;
+ }
+ 
+ .frontyy {
+    
+    background: linear-gradient(orange,gold);
+
+   
+ }
+ 
+ .pushabley {
+  
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    
+     width: 216px !important;
+      height: 128px !important;
+      font-size: 64px;
+      line-height: 64px;
+      font-family:micro !important;
+      color: white;
+     
+    
+  }
+  .fronty {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+   
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushabley:active .fronty {
+    transform: translateY(-2px);
+  }
+ 
+ 
+ 
+  .pushable {
+    background: #000;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    
+     width: 216px !important;
+      height: 128px !important;
+      font-size: 64px;
+      line-height: 64px;
+      font-family:micro !important;
+      color: white;
+     
+    
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    background: linear-gradient(#000,#333);
+
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  
+  
+ 
+  .pushableg {
+    background: #3CB371;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    
+     width: 216px !important;
+      height: 128px !important;
+      font-size: 64px;
+      line-height: 64px;
+      font-family:micro !important;
+      color: white;
+     
+    
+  }
+  .frontg {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    background: linear-gradient(#3CB371,lawngreen);
+
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushableg:active .frontg {
+    transform: translateY(-2px);
+  }
+  
+  
+  .pushabler {
+    background: red;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    
+     width: 216px !important;
+      height: 128px !important;
+      font-size: 64px;
+      line-height: 64px;
+      font-family:micro !important;
+      color: white;
+     
+    
+  }
+  .frontr {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    background: linear-gradient(red,#ffaaaa);
+
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushabler:active .frontr {
+    transform: translateY(-2px);
+  }
+  
+  
+  
 <style>
 
 tr:nth-child(even) {
@@ -502,7 +685,43 @@ fake = "";
 
 function defaulttype()
 {
-    document.getElementById("pluss").style.background = "linear-gradient(lightblue, dodgerblue)";
+  
+  
+   elements = document.getElementsByClassName('pushabley');
+     elementsf = document.getElementsByClassName('fronty');
+    
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.add("pushableyy");
+        elements[i].classList.remove("pushablebb");
+       
+       
+       elementsf[i].classList.add("frontyy");
+      //  elementsf[i].classList.remove("frontbb");
+      
+      
+    }
+    
+    
+  document.getElementById("ppp").classList.remove("pushableyy");
+       document.getElementById("ppp").classList.add("pushablebb");
+      
+   /*    document.getElementById(clicked_id span ).classList.remove("frontyy");
+  document.getElementById(clicked_id span ).classList.add("frontbb");
+  
+  var baseElement = document.querySelector("p");
+document.getElementById("output").innerHTML =
+  (baseElement.querySelector("div span").innerHTML);
+  
+  */
+  
+  var j = document.getElementById("ppp").querySelector('.fronty');
+  
+    
+      j.classList.remove("frontyy");
+    
+      j.classList.add("frontbb");
+    
+    
 }
 
 function bplus() {
@@ -647,12 +866,39 @@ function bback() {
 function reply(clicked_id)
   {
     
-    elements = document.getElementsByClassName('sib');
+    elements = document.getElementsByClassName('pushabley');
+     elementsf = document.getElementsByClassName('fronty');
+    
     for (var i = 0; i < elements.length; i++) {
-        elements[i].style.background = "linear-gradient(gold, orange)";
+        elements[i].classList.add("pushableyy");
+        elements[i].classList.remove("pushablebb");
+       
+       
+       elementsf[i].classList.add("frontyy");
+      //  elementsf[i].classList.remove("frontbb");
+      
+      
     }
+    
+    
+  document.getElementById(clicked_id).classList.remove("pushableyy");
+       document.getElementById(clicked_id).classList.add("pushablebb");
+      
+   /*    document.getElementById(clicked_id span ).classList.remove("frontyy");
+  document.getElementById(clicked_id span ).classList.add("frontbb");
   
-       document.getElementById(clicked_id).style.background = "linear-gradient(lightblue, dodgerblue)";
+  var baseElement = document.querySelector("p");
+document.getElementById("output").innerHTML =
+  (baseElement.querySelector("div span").innerHTML);
+  
+  */
+  
+  var j = document.getElementById(clicked_id).querySelector('.fronty');
+  
+    
+      j.classList.remove("frontyy");
+    
+      j.classList.add("frontbb");
     
   }
   
@@ -1365,11 +1611,8 @@ function clearit() {
 	 faketype = "+";
 	
 	 fake = "";
-	  elements = document.getElementsByClassName('sib');
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].style.background = "linear-gradient(gold, orange)";
-    }
-    document.getElementById("pluss").style.background = "linear-gradient(lightblue, dodgerblue)";
+	 
+	 defaulttype();
 }
 
 
@@ -1454,30 +1697,148 @@ function clearit() {
 <div id="numpad">
 <table>
 <tr>
-<td><input type="button" id="pluss"  name="bplus" value="&plus;" class="numpad sib" onclick="bplus(), reply(this.id);" style="color:#fff; background:linear-gradient(gold,orange);color:white"></td>
-<td><input type="button" id="minuss" name="bminus" value="&minus;" class="numpad sib" onclick="bminus(), reply(this.id);" style="background: linear-gradient(gold,orange);color:white;"></td> 
-<td><input type="button" id="multss" name="bmultiply" value="&times;" class="numpad sib" onclick="bmultiply(), reply(this.id)" style="color:white; background:linear-gradient(gold,orange);color:white"></td> 
-<td><input type="button" id="divss" name="bdivide" value="&divide;" class="numpad sib" onclick="bdivide(), reply(this.id)" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td> 
+<td>
+  
+   <button id="ppp" onclick="bplus(), reply(this.id)"  class="pushabley">
+  <span class="fronty">
+    &plus;
+  </span>
+</button>
+ </td>
+ 
+<td>
+   <button id="mmm" onclick="bminus(), reply(this.id)"  class="pushabley">
+  <span class="fronty">
+    &minus;
+  </span>
+</button>
+ 
+  </td> 
+<td>
+   <button id="xxx" onclick="bmultiply(), reply(this.id)"  class="pushabley">
+  <span class="fronty">
+    &times;
+  </span>
+</button>
+ 
+  </td> 
+<td>
+   <button id="ddd" onclick="bdivide(), reply(this.id)"  class="pushabley">
+  <span class="fronty">
+    &divide;
+  </span>
+</button>
+ 
+  </td> 
 </tr>
 <tr>
-<td><input type="button" name="seven" value="7" class="numpad" onclick="bseven()"></td>
-<td><input type="button" name="eight" value="8" class="numpad" onclick="beight()"></td> 
-<td><input type="button" name="nine" value="9" class="numpad" onclick="bnine()"></td> 
-<td><input type="button" id="perpp" name="percentplus" value="&plus;%" class="sib numpad" onclick="bpercentplus(), reply(this.id)" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td> 
+<td>
+  <button onclick="bseven()" class="pushable">
+  <span class="front">
+    7
+  </span>
+</button>
+  </td>
+<td>
+  <button onclick="beight()" class="pushable">
+  <span class="front">
+    8
+  </span>
+</button>
+  </td> 
+<td>
+  <button onclick="bnine()" class="pushable">
+  <span class="front">
+    9
+  </span>
+</button>
+  </td> 
+<td>
+   <button id="pppp" onclick="bpercentplus(), reply(this.id)" class="pushabley">
+  <span class="fronty">
+    &plus;%
+  </span>
+</button>
+  
+  
+  </td> 
 </tr>
 <tr>
-<td><input type="button" name="four" value="4" class="numpad" onclick="bfour()"></td> 
-<td><input type="button" name="five" value="5" class="numpad" onclick="bfive()"></td> 
-<td><input type="button" name="six" value="6" class="numpad" onclick="bsix()"></td>
-<td><input type="button" id="perpss" name="percentminus" value="&minus;%" class="numpad sib" onclick="bpercentminus(), reply(this.id)" style="color:#fff;background:linear-gradient(gold,orange);color:white"></td>
+<td>
+  <button onclick="bfour()" class="pushable">
+  <span class="front">
+    4
+  </span>
+</button>
+  </td> 
+<td>
+  <button onclick="bfive()" class="pushable">
+  <span class="front">
+    5
+  </span>
+</button>
+  </td> 
+<td>
+  <button onclick="bsix()" class="pushable">
+  <span class="front">
+    6
+  </span>
+</button>
+  </td>
+<td>
+  <button id="ppmm" onclick="bpercentminus(), reply(this.id)" class="pushabley">
+  <span class="fronty">
+    &minus;%
+  </span>
+</button>
+
+ 
 </tr>
 <tr>
-<td><input type="button" name="one" value="1" class="numpad" onclick="bone()"></td> 
-<td><input type="button" name="two" value="2" class="numpad" onclick="btwo()"></td> 
-<td><input type="button" name="three" value="3" class="numpad" onclick="bthree()"></td>
+  
+  
+<td>
+  <!--
+  <input type="button" name="one" value="1" class="numpad" onclick="bone()">-->
+<button onclick="bone()" class="pushable">
+  <span class="front">
+    1
+  </span>
+</button>
+</td> 
 
 
-<td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
+<td>
+  
+<button onclick="btwo()" class="pushable">
+  <span class="front">
+    2
+  </span>
+</button>
+  
+  </td> 
+<td>
+  
+ <button onclick="bthree()" class="pushable">
+  <span class="front">
+    3
+  </span>
+</button>
+  
+  </td>
+
+
+<td>
+  
+ <button onclick="clearit()" class="pushabler">
+  <span class="frontr">
+    AC
+  </span>
+</button>
+
+  
+  
+  </td>
 
 
 </tr>
@@ -1486,17 +1847,46 @@ function clearit() {
 
 
 
-<td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td>   
-<td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
+<td>
+  <button onclick="bdot()" class="pushable">
+  <span class="front">
+    .
+  </span>
+</button>
+  </td>   
+<td>
+  <button onclick="bzero()" class="pushable">
+  <span class="front">
+    0
+  </span>
+</button>
+  </td> 
 
 
 
 
-<td><input type="button" onclick="bequal();" name="bequal" value="&#9166;" class="numpad" style="background:linear-gradient(yellowgreen,#3CB371);font-weight:bold;color:fff"></td>
+<td>
+   <button onclick="bequal()" class="pushableg">
+  <span class="frontg">
+    &#9166;
+  </span>
+  
+  
+  </td>
 
 
 
-<td><input type="button" name="bback" value="&#8592;" class="numpad" onclick="bback()" style="background:linear-gradient(red,#dd0000);color:#fff;font-weight:bold;"></td>
+<td>
+  
+  
+ <button onclick="bback()" class="pushabler">
+  <span class="frontr">
+    &#8592;
+  </span>
+</button>
+  
+
+  </td>
 
 
 
