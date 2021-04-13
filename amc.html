@@ -34,7 +34,7 @@ html {
 
 .bz {
   width: 144px;
-  height: 32px;
+  height: 64px;
   color:#fff;
   padding:0;
   border-radius:5px;
@@ -257,6 +257,8 @@ select {
 
 .myc {
   font-family: 'core' !important;
+  height:64px;
+  font-size:32px;
 }
 
 .clear2 {
@@ -1427,7 +1429,7 @@ function clearit() {
   <input readonly type="text" pattern=""  name="mytotal" class="mytotal" id="mytotal" value="" style="font-family:micro;">
   <input readonly type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value="" style="font-family:micro;"></div>
 <input  class="bz myc" type="button" value="Reset"  onclick="clearit()" style="background: #666 !important;">
-<input  class="bz myc" type="button" value="Print" onclick="print()" style="background: dodgerblue !important;">
+<input  class="bz myc" type="button" value="Print" onclick="printmypage()" style="background: dodgerblue !important;">
 <input  class="bz myc" type="button" value="Save" onclick="saveFile()" style="background: dodgerblue !important;">
 
 <!-- <input type="text" value="Total:" class="totallabel" readonly><input type="text" value="0.00" class="total" id="total" readonly> -->
@@ -1445,7 +1447,7 @@ function clearit() {
   <option value="mp" >&minus;% (auto = mnum)</option>
 </select>
 <input class="bz myc" type="button" value="Enter"  onclick="submitq()" id="enter" style="background: yellowgreen !important;">
-<input  class="bz myc" type="button" value="Delete ID"  onclick="delete_entry()" style="background: red !important;">
+<input  class="bz myc" type="button" value="Del ID"  onclick="delete_entry()" style="background: red !important;">
 
 <div id="numpad">
 <table>
@@ -1471,13 +1473,30 @@ function clearit() {
 <td><input type="button" name="one" value="1" class="numpad" onclick="bone()"></td> 
 <td><input type="button" name="two" value="2" class="numpad" onclick="btwo()"></td> 
 <td><input type="button" name="three" value="3" class="numpad" onclick="bthree()"></td>
-<td><input type="button" name="bback" value="&#8656;" class="numpad" onclick="bback()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
+
+
+<td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
+
+
 </tr>
 <tr>
+  
+
+
+
+<td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td>   
 <td><input type="button" name="zero" value="0" class="numpad" onclick="bzero()"></td> 
-<td><input type="button" name="dot" value="." class="numpad" onclick="bdot()"></td> 
+
+
+
+
 <td><input type="button" onclick="bequal();" name="bequal" value="&#9166;" class="numpad" style="background:linear-gradient(yellowgreen,#3CB371);font-weight:bold;color:fff"></td>
-<td><input type="button" name="ac" value="AC" class="numpad" onclick="clearit()" style="background:linear-gradient(red,#dd0000);color:#fff;"></td>
+
+
+
+<td><input type="button" name="bback" value="&#8592;" class="numpad" onclick="bback()" style="background:linear-gradient(red,#dd0000);color:#fff;font-weight:bold;"></td>
+
+
 
 </tr>
 
@@ -1542,6 +1561,15 @@ function mynumpad()
   
 }
 
+function printmypage()
+{
+   var nump = document.getElementById("numpad");
+   hide(nump);
+   document.getElementById("operation").value = "auto";
+   print();
+   
+
+}
 function checknumpad()
 {	
   var op = document.getElementById("operation");
