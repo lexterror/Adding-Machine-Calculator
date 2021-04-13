@@ -1399,7 +1399,9 @@ function clearit() {
         var data2stringnocoma = data.join("");
         var data2string = data2stringnocoma.toString();
         const textToBLOB = new Blob([data2string], { type: 'text/plain' });
-        const sFileName = 'adding-machine-calculator.txt';	   // The file to save the data.
+        var d = new Date();
+
+        const sFileName = 'adding-machine-calculator-' + d + '.txt';	   // The file to save the data.
 
         let newLink = document.createElement("a");
         newLink.download = sFileName;
