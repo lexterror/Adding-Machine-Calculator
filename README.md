@@ -4,4 +4,4 @@ Calculator Use: This adding machine calculator is useful for keeping a running t
 
 It supports Keyboard-only mode, and Numpad mode for mobile devices.
 
-To use this program open the file "amc.html" with any browser! 
+To use this program open the file "amc.html" with any browser! This program is written in javascript/html/css all in one .html file
