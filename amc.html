@@ -185,7 +185,7 @@
   }
   
 
-tr:nth-child(even) {
+#mycTable tr:nth-child(even) {
   font-family: core !important;
   background: #CCC !important;
  
@@ -193,7 +193,7 @@ tr:nth-child(even) {
   overflow: hidden;
   white-space: nowrap;  
 }
-tr:nth-child(odd) {
+#mycTable tr:nth-child(odd) {
   
   background: #eee !important;
 font-family: core !important;
@@ -234,7 +234,7 @@ html {
 
 #mainbox {
 	
-	width: 900px;
+	width: 908px;
     height: 100%;
 	margin-top: 0px;
 	color: #000;
@@ -276,7 +276,7 @@ html {
 }
 
 #title {
-	background: #fff;
+	
 	width: 880px;
 	padding: 10px;
 	font-family: 'micro' !important;
@@ -340,16 +340,13 @@ select {
 
 .mytotal {
 	
-	width: 436px;
+	width: 430px;
 	text-align: left;
-  padding: 8px;
   height:64px;
-  font-size:48px;
-  line-height:64px;
   left:0;
   border:none;
   float:left;
-  background:linear-gradient(90deg,#ddd,white);
+  color:#fff;
   margin:0 auto;
   border-radius:10px;
 }
@@ -357,18 +354,16 @@ select {
 
 .entry {
 	
-	width: 436px;
+	width: 430px;
 	text-align: right;
-  padding: 8px;
   height:64px;
-  font-size:48px;
-  line-height:64px;
   right:0;
   border:none;
   float:right;
-  background:linear-gradient(90deg,white,#ddd);
+  color:#fff;
   margin:0 auto;
   border-radius:10px;
+  
 }
 
 #subr {
@@ -403,6 +398,18 @@ select {
     text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;  
+}
+
+input[type="text"]
+{
+    background: transparent;
+    border: none;
+    height:60px;
+    font-size:60px;
+    line-height:60px;
+    text-shadow: 0 0 5px skyblue;
+    color: #ddd !important;
+
 }
 
 .aright {
@@ -485,9 +492,12 @@ select {
 #footer {
 	margin-top: 0;
 	padding: 8px;
-    background: #fff;
+    background: #eeee=;
     margin: 0 auto;
     text-align: center;
+    border-radius:15px;
+    border: 4px solid #000;
+    
 }
 
 #mycTable2 {
@@ -1702,7 +1712,7 @@ function clearit() {
 
 <div id="mainbox">
 <div id="ghost">
-<div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about" style="font-family:core;"><i>&nbsp;&nbsp;Personal Finance</i></span>
+<div id="title" style="height:24px;"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about" style="font-family:core;"><i>&nbsp;&nbsp;Personal Finance</i></span>
   <select onchange="changesize(this);" style="float:right;">
   <option>xx-small</option>
   <option>x-small</option>
@@ -1720,12 +1730,14 @@ function clearit() {
  
 
 <div id="footer">
-  <div style="width:100%">
+  <div style="width:876px;height:60px;left:0;right:0;margin:0 auto">
+  <div style="margin: 0 auto;width:872px;height:60px;background:linear-gradient(#666,#000);border-radius:10px;margin-top:45px;border:2px solid #000;left:0;right:0;">
+  <input readonly type="text" pattern=""  name="mytotal" class="mytotal" id="mytotal" value="" style="font-family:micro;margin-left:5px;">
+  <input readonly type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value="" style="font-family:micro;margin-right:5px;;">
+  
+  </div></div>
 
-  <input readonly type="text" pattern=""  name="mytotal" class="mytotal" id="mytotal" value="" style="font-family:micro;">
-  <input readonly type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value="" style="font-family:micro;"></div>
-
-<div id="numpad">
+<div id="numpad" style="margin-top:5px">
 <table>
 <tr>
 <td>
@@ -1946,8 +1958,8 @@ function clearit() {
 </tr>
 
 </table></div>
-
-<input  class="bz myc" type="button" value="Reset"  onclick="clearit()" style="background: #666 !important;">
+<div style="margin-top:10px;">
+<input  class="bz myc" type="button" value="Reset"  onclick="clearit()" style="background: red !important;">
 <input  class="bz myc" type="button" value="Print" onclick="printmypage()" style="background: dodgerblue !important;">
 <input  class="bz myc" type="button" value="Save" onclick="saveFile()" style="background: dodgerblue !important;">
 
@@ -1968,12 +1980,12 @@ function clearit() {
 <input class="bz myc" type="button" value="Enter"  onclick="submitq()" id="enter" style="background: yellowgreen !important;">
 <input  class="bz myc" type="button" value="Del ID"  onclick="delete_entry()" style="background: red !important;">
 
-
+</div>
 </div>
 <!-- <input type="number"   name="del" class= "del" id = "del" value=""> -->
 <!-- <label for="del" class="labelit">ID#</label> -->
 
-<table style="width:900px;" id="mycTable" style="font-family:core !important;">
+<table style="width:904px;margin-top:10px;border: 2px solid #000;" id="mycTable" style="font-family:core !important;">
 <thead>
   <tr>
     <th class="tvalue" style="border-bottom: 1px solid #aaa;">ID&nbsp;&nbsp;<div id="subr">Sub-Total</div></th>
