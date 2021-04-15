@@ -1703,7 +1703,7 @@ function clearit() {
 <div id="mainbox">
 <div id="ghost">
 <div id="title"><span style="color:#ff0000;">A</span><span style="color:#ff0800;">d</span><span style="color:#ff1100;">d</span><span style="color:#ff1900;">i</span><span style="color:#ff2200;">n</span><span style="color:#ff2a00;">g</span><span style="color:#ff3300;"> </span><span style="color:#ff3b00;">M</span><span style="color:#ff4400;">a</span><span style="color:#ff4c00;">c</span><span style="color:#ff5500;">h</span><span style="color:#ff5d00;">i</span><span style="color:#ff6500;">n</span><span style="color:#ff6e00;">e</span><span style="color:#ff7600;"> </span><span style="color:#ff7f00;">C</span><span style="color:#ff8700;">a</span><span style="color:#ff9000;">l</span><span style="color:#ff9800;">c</span><span style="color:#ffa100;">u</span><span style="color:#ffa900;">l</span><span style="color:#ffb200;">a</span><span style="color:#ffba00;">t</span><span style="color:#ffc300;">o</span><span style="color:#ffcb00;">r</span><span class="about" style="font-family:core;"><i>&nbsp;&nbsp;Personal Finance</i></span>
-  <select onchange="changesize(this);" size="11" style="float:right;">
+  <select onchange="changesize(this);" style="float:right;">
   <option>xx-small</option>
   <option>x-small</option>
   <option>small</option>
@@ -1724,59 +1724,54 @@ function clearit() {
 
   <input readonly type="text" pattern=""  name="mytotal" class="mytotal" id="mytotal" value="" style="font-family:micro;">
   <input readonly type="text" pattern="[0-9!*+/%-pm]"  name="entry" class="entry" id="entry" value="" style="font-family:micro;"></div>
-<input  class="bz myc" type="button" value="Reset"  onclick="clearit()" style="background: #666 !important;">
-<input  class="bz myc" type="button" value="Print" onclick="printmypage()" style="background: dodgerblue !important;">
-<input  class="bz myc" type="button" value="Save" onclick="saveFile()" style="background: dodgerblue !important;">
-
-<!-- <input type="text" value="Total:" class="totallabel" readonly><input type="text" value="0.00" class="total" id="total" readonly> -->
-
-<!-- <input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly> -->
-
-<select id="operation" class="operation myc" onchange="checknumpad()">
-  <option value="mobile">Mobile</option>
-  <option value="auto">auto (off)</option>
-  <option value="add">&plus; (auto = +num)</option>
-  <option value="subtract">&minus; (auto = -num)</option>
-  <option value="multiply" >&times; (auto = *num)</option>
-  <option value="divide" >&divide; (auto = /num)</option>
-  <option value="pp" >&plus;% (auto = pnum)</option>
-  <option value="mp" >&minus;% (auto = mnum)</option>
-</select>
-<input class="bz myc" type="button" value="Enter"  onclick="submitq()" id="enter" style="background: yellowgreen !important;">
-<input  class="bz myc" type="button" value="Del ID"  onclick="delete_entry()" style="background: red !important;">
 
 <div id="numpad">
 <table>
 <tr>
 <td>
   
-   <button id="ppp" onclick="bplus(), reply(this.id)"  class="pushabley">
-  <span class="fronty">
-    &plus;
+  
+<!-- back -->
+
+
+   <button onclick="clearit()" class="pushabler">
+  <span class="frontr">
+    AC
   </span>
 </button>
+
+
  </td>
  
 <td>
-   <button id="mmm" onclick="bminus(), reply(this.id)"  class="pushabley">
-  <span class="fronty">
-    &minus;
+  
+  
+ <button onclick="bback()" class="pushabler">
+  <span class="frontr" style="font-weight:bold;">
+    &#8592;
   </span>
 </button>
+  
+  
+
+  </td> 
+<td>
+  
+  <!-- mult -->
+    <button id="ppmm" onclick="bpercentminus(), reply(this.id)" class="pushabley">
+  <span class="fronty">
+    &minus;%
+  </span>
+</button>
+
  
   </td> 
 <td>
-   <button id="xxx" onclick="bmultiply(), reply(this.id)"  class="pushabley">
+  
+  
+   <button id="pppp" onclick="bpercentplus(), reply(this.id)" class="pushabley">
   <span class="fronty">
-    &times;
-  </span>
-</button>
- 
-  </td> 
-<td>
-   <button id="ddd" onclick="bdivide(), reply(this.id)"  class="pushabley">
-  <span class="fronty">
-    &divide;
+    &plus;%
   </span>
 </button>
  
@@ -1805,11 +1800,14 @@ function clearit() {
 </button>
   </td> 
 <td>
-   <button id="pppp" onclick="bpercentplus(), reply(this.id)" class="pushabley">
+  
+  
+   <button id="ddd" onclick="bdivide(), reply(this.id)"  class="pushabley">
   <span class="fronty">
-    &plus;%
+    &divide;
   </span>
 </button>
+  
   
   
   </td> 
@@ -1837,12 +1835,12 @@ function clearit() {
 </button>
   </td>
 <td>
-  <button id="ppmm" onclick="bpercentminus(), reply(this.id)" class="pushabley">
+  <button id="xxx" onclick="bmultiply(), reply(this.id)"  class="pushabley">
   <span class="fronty">
-    &minus;%
+    &times;
   </span>
 </button>
-
+ 
  
 </tr>
 <tr>
@@ -1880,14 +1878,15 @@ function clearit() {
 
 
 <td>
-  
- <button onclick="clearit()" class="pushabler">
-  <span class="frontr">
-    AC
-  </span>
-</button>
+  <!-- clearit -->
 
   
+   <button id="mmm" onclick="bminus(), reply(this.id)"  class="pushabley">
+  <span class="fronty">
+    &minus;
+  </span>
+</button>
+ 
   
   </td>
 
@@ -1918,7 +1917,7 @@ function clearit() {
 
 <td>
    <button onclick="bequal()" class="pushableg">
-  <span class="frontg">
+  <span class="frontg" style="font-weight:bold;">
     &#9166;
   </span>
   
@@ -1928,14 +1927,17 @@ function clearit() {
 
 
 <td>
+  <!-- back -->
   
+
   
- <button onclick="bback()" class="pushabler">
-  <span class="frontr">
-    &#8592;
+   <button id="ppp" onclick="bplus(), reply(this.id)"  class="pushabley">
+  <span class="fronty">
+    &plus;
   </span>
 </button>
-  
+
+
 
   </td>
 
@@ -1944,6 +1946,29 @@ function clearit() {
 </tr>
 
 </table></div>
+
+<input  class="bz myc" type="button" value="Reset"  onclick="clearit()" style="background: #666 !important;">
+<input  class="bz myc" type="button" value="Print" onclick="printmypage()" style="background: dodgerblue !important;">
+<input  class="bz myc" type="button" value="Save" onclick="saveFile()" style="background: dodgerblue !important;">
+
+<!-- <input type="text" value="Total:" class="totallabel" readonly><input type="text" value="0.00" class="total" id="total" readonly> -->
+
+<!-- <input type="text" value="Operation" class="totallabel2" readonly><input type="text" value="Entry" class="totallabel2" readonly> -->
+
+<select id="operation" class="operation myc" onchange="checknumpad()">
+  <option value="mobile">Mobile</option>
+  <option value="auto">auto</option>
+  <option value="add">&plus;</option>
+  <option value="subtract">&minus;</option>
+  <option value="multiply" >&times;</option>
+  <option value="divide" >&divide;</option>
+  <option value="pp" >&plus;%&nbsp;</option>
+  <option value="mp" >&minus;%&nbsp;</option>
+</select>
+<input class="bz myc" type="button" value="Enter"  onclick="submitq()" id="enter" style="background: yellowgreen !important;">
+<input  class="bz myc" type="button" value="Del ID"  onclick="delete_entry()" style="background: red !important;">
+
+
 </div>
 <!-- <input type="number"   name="del" class= "del" id = "del" value=""> -->
 <!-- <label for="del" class="labelit">ID#</label> -->
@@ -1958,7 +1983,13 @@ function clearit() {
   
         </tbody>
 </table>
-</div></div></div>
+
+
+
+</div>
+
+
+</div></div>
 </body>
 </html>
 <script>
